@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # Scrapy settings for lab_1 project
-#
+# 
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
 #
@@ -13,6 +13,14 @@ BOT_NAME = 'lab_1'
 
 SPIDER_MODULES = ['lab_1.spiders']
 NEWSPIDER_MODULE = 'lab_1.spiders'
+
+ITEM_PIPELINES = ['lab_1.pipelines.ShzfcgPipeline', ]
+
+MONGODB_SERVER = "localhost"
+MONGODB_PORT = 27017
+MONGODB_DB = "shzfcg"
+MONGODB_COLLECTION = "caigou"
+
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
