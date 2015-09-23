@@ -11,6 +11,7 @@ from scrapy.exceptions import DropItem
 from scrapy.conf import settings
 from scrapy import log
 
+
 class ShzfcgPipeline(object):
     def __init__(self):
         connection = pymongo.MongoClient(

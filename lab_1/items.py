@@ -11,8 +11,10 @@ from scrapy import Item, Field
 class LabItem(Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    url = Field()
-    projName = Field()   
+    #url = Field()
+    projName = Field()
+    #bug = Field()   
+    #pos = Field()
     merchant = Field()
     date = Field()
     price = Field()
