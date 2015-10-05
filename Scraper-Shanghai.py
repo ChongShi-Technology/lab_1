@@ -134,6 +134,10 @@ class CrawlPage(QtGui.QWidget):
         self.setLayout(mainLayout)
 
     def crawl(self):
+        client = MongoClient()
+        db = client.shzfcg
+        db.caigou.drop()
+        
         os.chdir("shzfcg/")
         p=subprocess.Popen("scrapy crawl shzfcgSpider",shell=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
         self.textEdit.clear()
