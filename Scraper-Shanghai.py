@@ -3,12 +3,13 @@
 # @Author: 骆克云
 # @Date:   2015-10-03 20:47:24
 # @Last Modified by:   骆克云
-# @Last Modified time: 2015-10-04 22:03:13
+# @Last Modified time: 2015-10-05 11:23:35
 
 from PyQt4 import QtCore,QtGui
 from pymongo import MongoClient
 import subprocess
 import os
+import datetime
 
 import Scraper_rc
 
@@ -50,8 +51,7 @@ class ConfigurationPage(QtGui.QWidget):
         parameterGroup=QtGui.QGroupBox(u"参数分析-域设置")
     
         fieldList= QtGui.QListWidget()
-        urlItem = QtGui.QListWidgetItem(fieldList)
-        urlItem.setText("url")
+    
         projNameItem=QtGui.QListWidgetItem(fieldList)
         projNameItem.setText("projName")
         merchantItem=QtGui.QListWidgetItem(fieldList)
@@ -116,9 +116,15 @@ class CrawlPage(QtGui.QWidget):
         resultGroup=QtGui.QGroupBox(u"爬虫结果")
         self.table=QtGui.QTableWidget(0,4)
         self.table.setMinimumHeight(450)
+        #设置标题头
         headerLabels = (u"项目名称", u"成交供应商",u"采购日期",u"成交金额")
         self.table.setHorizontalHeaderLabels(headerLabels)
-        self.table.horizontalHeader().setResizeMode(QtGui.QHeaderView.Stretch)
+       # self.table.resizeColumnsToContents()
+       # self.table.horizontalHeader().setResizeMode(QtGui.QHeaderView.ResizeToContents)
+        self.table.setColumnWidth(0,400)
+        self.table.setColumnWidth(1,200)
+        #改变颜色
+        self.table.setAlternatingRowColors(True)
         resultLayout=QtGui.QVBoxLayout()
         resultLayout.addWidget(self.table)
         resultGroup.setLayout(resultLayout)
@@ -134,8 +140,9 @@ class CrawlPage(QtGui.QWidget):
         self.setLayout(mainLayout)
 
     def crawl(self):
-        client = MongoClient()
-        db = client.shzfcg
+        
+        client=MongoClient()
+        db=client.shzfcg
         db.caigou.drop()
         
         os.chdir("shzfcg/")
@@ -180,10 +187,10 @@ class QueryPage(QtGui.QWidget):
         packagesGroup = QtGui.QGroupBox(u"查询")
 
         merchantLabel = QtGui.QLabel(u"供应商:")
-        merchantEdit = QtGui.QLineEdit()
+        self.merchantEdit = QtGui.QLineEdit()
 
         projLabel = QtGui.QLabel(u"项目名称:")
-        projEdit = QtGui.QLineEdit()
+        self.projEdit = QtGui.QLineEdit()
 
         self.fromDateEdit = QtGui.QDateEdit()
         self.fromDateEdit.setDate(QtCore.QDate(2015, 1, 1))
@@ -197,22 +204,23 @@ class QueryPage(QtGui.QWidget):
         toLabel.setBuddy(self.toDateEdit)
 
         priceLabel=QtGui.QLabel(u"金额:")
-        priceLowSpinBox = QtGui.QSpinBox()
-        priceLowSpinBox.setPrefix(u"金额下限: ")
-        priceLowSpinBox.setSuffix(u" 元")
-        priceLowSpinBox.setSpecialValueText(u"金额下限: 0 元")
-        priceLowSpinBox.setMinimum(0)
-        priceLowSpinBox.setMaximum(1000000)
-        priceLowSpinBox.setSingleStep(100)
+        self.priceLowSpinBox = QtGui.QSpinBox()
+        self.priceLowSpinBox.setPrefix(u"金额下限: ")
+        self.priceLowSpinBox.setSuffix(u" 元")
+        self.priceLowSpinBox.setSpecialValueText(u"金额下限: 0 元")
+        self.priceLowSpinBox.setMinimum(0)
+        self.priceLowSpinBox.setMaximum(1000000)
+        self.priceLowSpinBox.setSingleStep(100)
 
 
-        priceHighSpinBox = QtGui.QSpinBox()
-        priceHighSpinBox.setPrefix(u"金额上限: ")
-        priceHighSpinBox.setSuffix(u" 元")
-        priceHighSpinBox.setSpecialValueText(u"金额上限: 1000000 元")
-        priceHighSpinBox.setMinimum(0)
-        priceHighSpinBox.setMaximum(1000000)
-        priceHighSpinBox.setSingleStep(100)
+        self.priceHighSpinBox = QtGui.QSpinBox()
+        self.priceHighSpinBox.setPrefix(u"金额上限: ")
+        self.priceHighSpinBox.setSuffix(u" 元")
+        self.priceHighSpinBox.setSpecialValueText(u"金额上限: 1000000 元")
+        self.priceHighSpinBox.setMinimum(0)
+        self.priceHighSpinBox.setMaximum(1000000)
+        self.priceHighSpinBox.setValue(1000000)
+        self.priceHighSpinBox.setSingleStep(100)
 
 
         startQueryButton = QtGui.QPushButton(u"开始查询")
@@ -224,23 +232,27 @@ class QueryPage(QtGui.QWidget):
         self.table.setMinimumHeight(450)
         headerLabels = (u"项目名称", u"成交供应商",u"采购日期",u"成交金额")
         self.table.setHorizontalHeaderLabels(headerLabels)
-        self.table.horizontalHeader().setResizeMode(QtGui.QHeaderView.Stretch)
+        self.table.setColumnWidth(0,400)
+        self.table.setColumnWidth(1,200)
+        #改变颜色
+        self.table.setAlternatingRowColors(True)
+        #self.table.horizontalHeader().setResizeMode(QtGui.QHeaderView.Stretch)
         resultLayout=QtGui.QVBoxLayout()
         resultLayout.addWidget(self.table)
         resultGroup.setLayout(resultLayout)
 
         packagesLayout = QtGui.QGridLayout()
-        packagesLayout.addWidget(merchantLabel, 0, 0)
-        packagesLayout.addWidget(merchantEdit, 0, 1)
-        packagesLayout.addWidget(projLabel, 0, 2)
-        packagesLayout.addWidget(projEdit, 0, 3)
+        packagesLayout.addWidget(projLabel, 0, 0)
+        packagesLayout.addWidget(self.projEdit, 0, 1)
+        packagesLayout.addWidget(merchantLabel, 0, 2)
+        packagesLayout.addWidget(self.merchantEdit, 0, 3)
         packagesLayout.addWidget(fromLabel, 1, 0)
         packagesLayout.addWidget(self.fromDateEdit, 1, 1, 1, 1)
         packagesLayout.addWidget(toLabel, 1, 2)
         packagesLayout.addWidget(self.toDateEdit, 1, 3, 1, 1)
         packagesLayout.addWidget(priceLabel,2,0)
-        packagesLayout.addWidget(priceLowSpinBox, 2, 1, 1, 1)
-        packagesLayout.addWidget(priceHighSpinBox, 2, 3, 1, 1)
+        packagesLayout.addWidget(self.priceLowSpinBox, 2, 1, 1, 1)
+        packagesLayout.addWidget(self.priceHighSpinBox, 2, 3, 1, 1)
         packagesLayout.addWidget(startQueryButton,3,0)
         packagesLayout.addWidget(clearQueryButton,3,1)
         
@@ -252,26 +264,36 @@ class QueryPage(QtGui.QWidget):
         mainLayout.addSpacing(12)
         mainLayout.addStretch(1)
 
+        self.showResult(False,queryCollection=[])
         startQueryButton.clicked.connect(self.queryResult)
-        clearQueryButton.clicked.connect(self.clearResult)
-        self.showResult(True)
+        clearQueryButton.clicked.connect(self.clearResult)       
         self.setLayout(mainLayout)
 
     def queryResult(self):
-        pass
-
-    def clearResult(self):
-        self.table.clear()
-
-    def showResult(self,isShow):
-        if not isShow:
-            return
+        projName=unicode(self.projEdit.text())
+        merchant=unicode(self.merchantEdit.text())
+        fromDate=unicode(self.fromDateEdit.date().toString("yyyy-MM-dd"))
+        toDate=unicode(self.toDateEdit.date().toString("yyyy-MM-dd"))
+        lowPrice=unicode(self.priceLowSpinBox.value())
+        highPrice=unicode(self.priceHighSpinBox.value())
+        
+       # print type(str(fromDate)) {"date":{"$lt":str(fromDate)}} ,{"price":{"$gte":str(lowPrice),"lte":str(highPrice)}}
         client=MongoClient()
         db=client.shzfcg
         collection=db.caigou
-        self.table.setRowCount(collection.count())
+        queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)}})
+        self.showResult(True,queryCollection)
+
+    def clearResult(self):
+        self.table.clearContents()
+
+    def showResult(self,isShow,queryCollection):
+        if not isShow:
+            return
+       
+        self.table.setRowCount(queryCollection.count())
         row=0
-        for p in collection.find():
+        for p in queryCollection:
             item0=QtGui.QTableWidgetItem(p.get("projName","-1"))
             item1=QtGui.QTableWidgetItem(p.get("merchant","-1"))
             item2=QtGui.QTableWidgetItem(p.get("date","-1"))
@@ -286,7 +308,7 @@ class QueryPage(QtGui.QWidget):
 class ConfigDialog(QtGui.QDialog):
     def __init__(self, parent=None):
         super(ConfigDialog, self).__init__(parent)
-        self.setFixedSize(1000,705)
+        self.setFixedSize(1024,705)
         self.contentsWidget = QtGui.QListWidget()
         self.contentsWidget.setViewMode(QtGui.QListView.IconMode)
         self.contentsWidget.setIconSize(QtCore.QSize(96, 84))

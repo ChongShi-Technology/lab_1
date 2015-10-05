@@ -58,9 +58,14 @@ class shzfcgSpider(CrawlSpider):
 			pos_2_1 = element.find('采购日期')
 			pos_2_2 = element.find('评审日期')
 			pos_2_3 = element.find('评标日期')
+			pos_2_4 = element.find('成交日期')
 			
 			pos_3_1 = element.find('成交金额')
 			pos_3_2 = element.find('中标金额')
+			pos_3_3 = element.find('成交价格')
+			pos_3_4 = element.find('合价')
+			pos_3_5 = element.find('采购成交价')
+			pos_3_6 = element.find('中标价')
 			element = element.decode("utf-8")
 			
 			if pos_1_1 > -1 or pos_1_2 > -1 :
@@ -73,11 +78,13 @@ class shzfcgSpider(CrawlSpider):
 				else :
 					item['merchant'] = element[pos_1:]
 				
-			if pos_2_1 >=0 or pos_2_2 >=0 or pos_2_3 >=0 :
+			if pos_2_1 >=0 or pos_2_2 >=0 or pos_2_3 >=0 or pos_2_4 >=0 :
 				item['date'] = re.compile('\d{4}\D\d+\D\d+').search(element).group()
 				
-			if pos_3_1 > -1 or pos_3_2 > -1 :
-				item['price'] = re.compile('\d+\.?\d*').search(element).group()
+			if pos_3_1 > -1 or pos_3_2 > -1 or pos_3_3 > -1 or pos_3_4 > -1 or pos_3_5 > -1 or pos_3_6 > -1 :
+				item['price'] = re.compile('\d+\,?\d+\,?\d+\.?\d*').search(element).group(1)
+				if not item['price'] :
+					item['price'] = re.compile('\d+\,?\d+\,?\d+\.?\d*').search(element).group()s
 			
 		return item
 
