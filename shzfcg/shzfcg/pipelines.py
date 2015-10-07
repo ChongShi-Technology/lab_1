@@ -32,4 +32,8 @@ class ShzfcgPipeline(object):
                     level=log.DEBUG, spider=spider)
         return item
 
-
+'''
+class ShzfcgPipeline(object):
+    def process_item(self, item, spider):
+        return item
+'''

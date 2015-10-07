@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for lab_1 project
-# 
+# Scrapy settings for shzfcg project
+#
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
 #
@@ -9,12 +9,12 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'lab_1'
+BOT_NAME = 'shzfcg'
 
-SPIDER_MODULES = ['lab_1.spiders']
-NEWSPIDER_MODULE = 'lab_1.spiders'
+SPIDER_MODULES = ['shzfcg.spiders']
+NEWSPIDER_MODULE = 'shzfcg.spiders'
 
-ITEM_PIPELINES = ['lab_1.pipelines.ShzfcgPipeline', ]
+ITEM_PIPELINES = ['shzfcg.pipelines.ShzfcgPipeline', ]
 
 MONGODB_SERVER = "localhost"
 MONGODB_PORT = 27017
@@ -22,9 +22,8 @@ MONGODB_DB = "shzfcg"
 MONGODB_COLLECTION = "caigou"
 
 
-
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'lab_1 (+http://www.yourdomain.com)'
+#USER_AGENT = 'shzfcg (+http://www.yourdomain.com)'
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS=32
@@ -52,13 +51,13 @@ MONGODB_COLLECTION = "caigou"
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'lab_1.middlewares.MyCustomSpiderMiddleware': 543,
+#    'shzfcg.middlewares.MyCustomSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'lab_1.middlewares.MyCustomDownloaderMiddleware': 543,
+#    'shzfcg.middlewares.MyCustomDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -70,7 +69,7 @@ MONGODB_COLLECTION = "caigou"
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'lab_1.pipelines.SomePipeline': 300,
+#    'shzfcg.pipelines.SomePipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)

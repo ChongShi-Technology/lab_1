@@ -8,13 +8,11 @@
 from scrapy import Item, Field
 
 
-class LabItem(Item):
+class ShzfcgItem(Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    url = Field()
+    # url = Field()
     projName = Field()   
     merchant = Field()
     date = Field()
     price = Field()
-    
- 
