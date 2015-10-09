@@ -1,0 +1,7 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+   <file>images/查询.png</file>
+   <file>images/爬取.png</file>
+   <file>images/配置.png</file>
+</qresource>
+</RCC>

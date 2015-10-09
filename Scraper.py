@@ -3,7 +3,7 @@
 # @Author: 骆克云
 # @Date:   2015-10-03 20:47:24
 # @Last Modified by:   骆克云
-# @Last Modified time: 2015-10-05 11:23:35
+# @Last Modified time: 2015-10-09 19:14:10
 
 from PyQt4 import QtCore,QtGui
 from pymongo import MongoClient
@@ -145,7 +145,9 @@ class CrawlPage(QtGui.QWidget):
         db=client.shzfcg
         db.caigou.drop()
         
-        os.chdir("shzfcg/")
+        if os.path.exists("./Scraper.py"):
+            os.chdir("shzfcg/")
+        #os.chdir("shzfcg/")
         p=subprocess.Popen("scrapy crawl shzfcgSpider",shell=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
         self.textEdit.clear()
         cursor = self.textEdit.textCursor()
