@@ -3,7 +3,7 @@
 # @Author: 骆克云
 # @Date:   2015-10-03 20:47:24
 # @Last Modified by:   骆克云
-# @Last Modified time: 2015-10-05 11:23:35
+# @Last Modified time: 2015-10-09 21:40:55
 
 from PyQt4 import QtCore,QtGui
 from pymongo import MongoClient
@@ -145,7 +145,9 @@ class CrawlPage(QtGui.QWidget):
         db=client.shzfcg
         db.caigou.drop()
         
-        os.chdir("shzfcg/")
+        if os.path.exists("./Scraper.py"):
+            os.chdir("shzfcg/")
+        #os.chdir("shzfcg/")
         p=subprocess.Popen("scrapy crawl shzfcgSpider",shell=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
         self.textEdit.clear()
         cursor = self.textEdit.textCursor()
@@ -215,11 +217,11 @@ class QueryPage(QtGui.QWidget):
 
         self.priceHighSpinBox = QtGui.QSpinBox()
         self.priceHighSpinBox.setPrefix(u"金额上限: ")
-        self.priceHighSpinBox.setSuffix(u" 元")
-        self.priceHighSpinBox.setSpecialValueText(u"金额上限: 1000000 元")
+        self.priceHighSpinBox.setSuffix(u" 万元")
+        self.priceHighSpinBox.setSpecialValueText(u"金额上限: 1000000 万元")
         self.priceHighSpinBox.setMinimum(0)
         self.priceHighSpinBox.setMaximum(1000000)
-        self.priceHighSpinBox.setValue(1000000)
+        self.priceHighSpinBox.setValue(10000)
         self.priceHighSpinBox.setSingleStep(100)
 
 
@@ -253,8 +255,8 @@ class QueryPage(QtGui.QWidget):
         packagesLayout.addWidget(priceLabel,2,0)
         packagesLayout.addWidget(self.priceLowSpinBox, 2, 1, 1, 1)
         packagesLayout.addWidget(self.priceHighSpinBox, 2, 3, 1, 1)
-        packagesLayout.addWidget(startQueryButton,3,0)
-        packagesLayout.addWidget(clearQueryButton,3,1)
+        packagesLayout.addWidget(startQueryButton,3,1)
+        packagesLayout.addWidget(clearQueryButton,3,3)
         
         packagesGroup.setLayout(packagesLayout)
 
@@ -275,14 +277,24 @@ class QueryPage(QtGui.QWidget):
         fromDate=unicode(self.fromDateEdit.date().toString("yyyy-MM-dd"))
         toDate=unicode(self.toDateEdit.date().toString("yyyy-MM-dd"))
         lowPrice=unicode(self.priceLowSpinBox.value())
-        highPrice=unicode(self.priceHighSpinBox.value())
+        highPrice=unicode(self.priceHighSpinBox.value()*10000)
+
         
        # print type(str(fromDate)) {"date":{"$lt":str(fromDate)}} ,{"price":{"$gte":str(lowPrice),"lte":str(highPrice)}}
         client=MongoClient()
         db=client.shzfcg
         collection=db.caigou
-        queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)}})
+        highPrice=int(highPrice)-1
+        if projName!="" and merchant=="":
+            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"projName":{"$regex":projName},"price":{"$gte":str(lowPrice),"$lte":str(highPrice)}})
+        elif projName !="" and merchant!="":
+            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"projName":{"$regex":projName},"merchant":{"$regex":merchant},"price":{"$gte":str(lowPrice),"$lte":str(highPrice)}})
+        elif projName=="" and merchant!="":
+            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"merchant":{"$regex":merchant},"price":{"$gte":str(lowPrice),"$lte":str(highPrice)}})
+        else:
+            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"price":{"$gte":str(lowPrice),"$lte":str(highPrice)}})
         self.showResult(True,queryCollection)
+        client.close()
 
     def clearResult(self):
         self.table.clearContents()
