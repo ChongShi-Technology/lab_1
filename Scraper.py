@@ -3,7 +3,7 @@
 # @Author: 骆克云
 # @Date:   2015-10-03 20:47:24
 # @Last Modified by:   骆克云
-# @Last Modified time: 2015-10-09 21:40:55
+# @Last Modified time: 2015-10-09 22:06:38
 
 from PyQt4 import QtCore,QtGui
 from pymongo import MongoClient
@@ -179,6 +179,7 @@ class CrawlPage(QtGui.QWidget):
             self.table.setItem(row,2,item2)
             self.table.setItem(row,3,item3)
             row=row+1
+        client.close()
        
 
 
