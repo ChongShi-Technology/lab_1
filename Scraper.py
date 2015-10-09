@@ -3,7 +3,7 @@
 # @Author: 骆克云
 # @Date:   2015-10-03 20:47:24
 # @Last Modified by:   骆克云
-# @Last Modified time: 2015-10-09 21:04:33
+# @Last Modified time: 2015-10-09 21:35:02
 
 from PyQt4 import QtCore,QtGui
 from pymongo import MongoClient
@@ -287,7 +287,6 @@ class QueryPage(QtGui.QWidget):
         if projName!="" and merchant=="":
             queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"projName":{"$regex":projName},"price":{"$gte":str(lowPrice),"$lte":str(highPrice)}})
         elif projName !="" and merchant!="":
-            print merchant
             queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"projName":{"$regex":projName},"merchant":{"$regex":merchant},"price":{"$gte":str(lowPrice),"$lte":str(highPrice)}})
         elif projName=="" and merchant!="":
             queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"merchant":{"$regex":merchant},"price":{"$gte":str(lowPrice),"$lte":str(highPrice)}})

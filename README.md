@@ -11,9 +11,12 @@
 4)中标结果由多包构成；
 
 程序运行须知：
--*1*-安装PyQt，Scrapy，MongoDB,PyMongo；
--*2*-命令行启动MongoDB服务；
--*3*-命令行运行：python Scraper.py(即界面程序)。
+-1 
+  安装PyQt，Scrapy，MongoDB,PyMongo；
+-2 
+  命令行启动MongoDB服务；
+-3 
+  命令行运行：python Scraper.py(即界面程序)。
 
 ##新问题
 **问题**:查询时第一次金额上限若不点击则查询不正常！
