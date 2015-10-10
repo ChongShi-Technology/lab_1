@@ -82,25 +82,13 @@ class shzfcgSpider(CrawlSpider):
 				item['date'] = re.compile('\d{4}\D\d+\D\d+').search(element).group()
 				
 			if pos_3_1 > -1 or pos_3_2 > -1 or pos_3_3 > -1 or pos_3_4 > -1 or pos_3_5 > -1 or pos_3_6 > -1 :
-				#item['price'] = re.compile('\d+\,?\d+\,?\d+\.?\d*').search(element).group()
 				oldPrice = re.compile('\d+\,?\d+\,?\d+\.?\d*').search(element).group()
-				#print unicode(oldPrice)
-				#print str(oldePrice)
-				#print oldPrice.rstrip(',')
-				#print oldPrice
 				p = re.compile("\d+,\d+?")
 				for com in p.finditer(oldPrice):
 					mm = com.group()
-					#print "hi:", mm
-					#print "oldPrice:", oldPrice
 					oldPrice = oldPrice.replace(mm, mm.replace(",",""))
-					#print "oldPrice_Now:", oldPrice, '\n'
-				#print str(oldPrice).rstrip(',')
-				#item['price'] = str(oldPrice).rstrip(',')
 				oldPrice = oldPrice.encode('utf-8')
-				#print "oldPrice's Type:", type(oldPrice)
 				item['price'] = float(oldPrice)
-				#print item['price']
-			
-		return item
 
+		if item["projName"].find(u"失败公告") == -1 :	
+			return item
