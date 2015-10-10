@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 # @Author: 骆克云
 # @Date:   2015-10-03 20:47:24
-# @Last Modified by:   骆克云
-# @Last Modified time: 2015-10-09 21:40:55
+# @Last Modified by:   陈睿进
+# @Last Modified time: 2015-10-10 12:33:55
 
 from PyQt4 import QtCore,QtGui
 from pymongo import MongoClient
