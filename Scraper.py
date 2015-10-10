@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+﻿#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Author: 骆克云
 # @Date:   2015-10-03 20:47:24
@@ -173,7 +173,8 @@ class CrawlPage(QtGui.QWidget):
             item0=QtGui.QTableWidgetItem(p.get("projName","-1"))
             item1=QtGui.QTableWidgetItem(p.get("merchant","-1"))
             item2=QtGui.QTableWidgetItem(p.get("date","-1"))
-            item3=QtGui.QTableWidgetItem(p.get("price","-1"))
+            item3=QtGui.QTableWidgetItem(unicode(str(p.get("price","-1"))))
+            #print "p.get(price):", p.get("price","-1")
             self.table.setItem(row,0,item0)
             self.table.setItem(row,1,item1)
             self.table.setItem(row,2,item2)
@@ -277,7 +278,9 @@ class QueryPage(QtGui.QWidget):
         fromDate=unicode(self.fromDateEdit.date().toString("yyyy-MM-dd"))
         toDate=unicode(self.toDateEdit.date().toString("yyyy-MM-dd"))
         lowPrice=unicode(self.priceLowSpinBox.value())
+	lowPrice=lowPrice.encode('utf-8')
         highPrice=unicode(self.priceHighSpinBox.value()*10000)
+	highPrice=highPrice.encode('utf-8')
 
         
        # print type(str(fromDate)) {"date":{"$lt":str(fromDate)}} ,{"price":{"$gte":str(lowPrice),"lte":str(highPrice)}}
@@ -286,13 +289,13 @@ class QueryPage(QtGui.QWidget):
         collection=db.caigou
         highPrice=int(highPrice)-1
         if projName!="" and merchant=="":
-            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"projName":{"$regex":projName},"price":{"$gte":str(lowPrice),"$lte":str(highPrice)}})
+            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"projName":{"$regex":projName},"price":{"$gte":float(lowPrice),"$lte":float(highPrice)}})
         elif projName !="" and merchant!="":
-            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"projName":{"$regex":projName},"merchant":{"$regex":merchant},"price":{"$gte":str(lowPrice),"$lte":str(highPrice)}})
+            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"projName":{"$regex":projName},"merchant":{"$regex":merchant},"price":{"$gte":float(lowPrice),"$lte":float(highPrice)}})
         elif projName=="" and merchant!="":
-            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"merchant":{"$regex":merchant},"price":{"$gte":str(lowPrice),"$lte":str(highPrice)}})
+            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"merchant":{"$regex":merchant},"price":{"$gte":float(lowPrice),"$lte":float(highPrice)}})
         else:
-            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"price":{"$gte":str(lowPrice),"$lte":str(highPrice)}})
+            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"price":{"$gte":float(lowPrice),"$lte":float(highPrice)}})
         self.showResult(True,queryCollection)
         client.close()
 
@@ -309,7 +312,7 @@ class QueryPage(QtGui.QWidget):
             item0=QtGui.QTableWidgetItem(p.get("projName","-1"))
             item1=QtGui.QTableWidgetItem(p.get("merchant","-1"))
             item2=QtGui.QTableWidgetItem(p.get("date","-1"))
-            item3=QtGui.QTableWidgetItem(p.get("price","-1"))
+            item3=QtGui.QTableWidgetItem(unicode(str(p.get("price","-1"))))
             self.table.setItem(row,0,item0)
             self.table.setItem(row,1,item1)
             self.table.setItem(row,2,item2)
