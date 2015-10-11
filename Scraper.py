@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 # @Author: 骆克云
 # @Date:   2015-10-03 20:47:24
-# @Last Modified by:   陈睿进
-# @Last Modified time: 2015-10-10 12:33:55
+# @Last Modified by:   骆克云
+# @Last Modified time: 2015-10-11 08:52:01
 
 from PyQt4 import QtCore,QtGui
 from pymongo import MongoClient
@@ -147,7 +147,7 @@ class CrawlPage(QtGui.QWidget):
         
         if os.path.exists("./Scraper.py"):
             os.chdir("shzfcg/")
-        #os.chdir("shzfcg/")
+
         p=subprocess.Popen("scrapy crawl shzfcgSpider",shell=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
         self.textEdit.clear()
         cursor = self.textEdit.textCursor()
@@ -159,7 +159,8 @@ class CrawlPage(QtGui.QWidget):
         if p.returncode!=0:
             cursor.insertText("error!")
             return -1
-        self.showResult(self.success==0)
+        self.showResult(self.success)
+        client.close()
 
     def showResult(self,isShow):
         if not isShow:
@@ -278,9 +279,9 @@ class QueryPage(QtGui.QWidget):
         fromDate=unicode(self.fromDateEdit.date().toString("yyyy-MM-dd"))
         toDate=unicode(self.toDateEdit.date().toString("yyyy-MM-dd"))
         lowPrice=unicode(self.priceLowSpinBox.value())
-	lowPrice=lowPrice.encode('utf-8')
+        lowPrice=lowPrice.encode("utf-8")
         highPrice=unicode(self.priceHighSpinBox.value()*10000)
-	highPrice=highPrice.encode('utf-8')
+        highPrice=highPrice.encode("utf-8")
 
         
        # print type(str(fromDate)) {"date":{"$lt":str(fromDate)}} ,{"price":{"$gte":str(lowPrice),"lte":str(highPrice)}}
