@@ -3,7 +3,7 @@
 # @Author: 骆克云
 # @Date:   2015-10-03 20:47:24
 # @Last Modified by:   骆克云
-# @Last Modified time: 2015-10-11 10:48:13
+# @Last Modified time: 2015-10-11 14:49:09
 
 from PyQt4 import QtCore,QtGui
 from pymongo import MongoClient
@@ -142,7 +142,11 @@ class CrawlPage(QtGui.QWidget):
     def crawl(self):
 
         self.success=True
-        
+        #删除原有数据
+        client=MongoClient()
+        db=client.shzfcg
+        db.caigou.drop()
+
         if os.path.exists("./Scraper.py"):
             os.chdir("shzfcg/")
 
@@ -158,6 +162,7 @@ class CrawlPage(QtGui.QWidget):
             cursor.insertText("error!")
             return -1
         self.showResult(True)
+        client.close()
         
 
     def showResult(self,isShow):
