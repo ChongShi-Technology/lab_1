@@ -82,6 +82,7 @@ class shzfcgSpider(CrawlSpider):
 				item['date'] = re.compile('\d{4}\D\d+\D\d+').search(element).group()
 				
 			if pos_3_1 > -1 or pos_3_2 > -1 or pos_3_3 > -1 or pos_3_4 > -1 or pos_3_5 > -1 or pos_3_6 > -1 :
+
 				oldPrice = re.compile('\d+\,?\d+\,?\d+\.?\d*').search(element).group()
 				p = re.compile("\d+,\d+?")
 				for com in p.finditer(oldPrice):
