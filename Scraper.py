@@ -3,7 +3,7 @@
 # @Author: 骆克云
 # @Date:   2015-10-03 20:47:24
 # @Last Modified by:   骆克云
-# @Last Modified time: 2015-10-11 14:49:09
+# @Last Modified time: 2015-10-11 15:44:53
 
 from PyQt4 import QtCore,QtGui
 from pymongo import MongoClient
@@ -146,22 +146,26 @@ class CrawlPage(QtGui.QWidget):
         client=MongoClient()
         db=client.shzfcg
         db.caigou.drop()
+        #清除表格
+        self.table.clearContents()
 
+        #确定Scrapy的目录
         if os.path.exists("./Scraper.py"):
             os.chdir("shzfcg/")
 
+        #开辟新进程运行Scrapy
         p=subprocess.Popen("scrapy crawl shzfcgSpider",shell=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
         self.textEdit.clear()
         cursor = self.textEdit.textCursor()
         for line in p.stdout.readlines():
             cursor.insertText(line)
-            if line.find("DNS lookup failed"):
+            if line.find("DNS lookup failed")!=-1:
                 self.success=False
         retval=p.wait()
         if p.returncode!=0:
             cursor.insertText("error!")
             return -1
-        self.showResult(True)
+        self.showResult(self.success)
         client.close()
         
 
