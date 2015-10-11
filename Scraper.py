@@ -146,6 +146,8 @@ class CrawlPage(QtGui.QWidget):
         client=MongoClient()
         db=client.shzfcg
         db.caigou.drop()
+        
+        self.table.clearContents()
 
         if os.path.exists("./Scraper.py"):
             os.chdir("shzfcg/")
@@ -156,12 +158,13 @@ class CrawlPage(QtGui.QWidget):
         for line in p.stdout.readlines():
             cursor.insertText(line)
             if line.find("DNS lookup failed"):
-                self.success=False
+                1
+                #self.success=False
         retval=p.wait()
         if p.returncode!=0:
             cursor.insertText("error!")
             return -1
-        self.showResult(True)
+        self.showResult(self.success)
         client.close()
         
 

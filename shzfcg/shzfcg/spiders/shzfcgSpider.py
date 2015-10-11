@@ -51,9 +51,9 @@ class shzfcgSpider(CrawlSpider):
 		for element in response.xpath('//td[@class="text3"]/text()').extract():
 			
 			element = element.encode("utf-8")
+
 			pos_1_1 = element.find('供应商：') # 成交供应商 和 中标供应商
 			pos_1_2 = element.find('中标单位：')
-			pos = element.find('：')
 			
 			pos_2_1 = element.find('采购日期')
 			pos_2_2 = element.find('评审日期')
@@ -66,10 +66,20 @@ class shzfcgSpider(CrawlSpider):
 			pos_3_4 = element.find('合价')
 			pos_3_5 = element.find('采购成交价')
 			pos_3_6 = element.find('中标价')
-			element = element.decode("utf-8")
+			
+			#element = element.decode("utf-8")
 			
 			if pos_1_1 > -1 or pos_1_2 > -1 :
-				
+				#'''
+				start = max(element.find(':'),element.find('：'))
+				end = max(element.find(','),element.find('，'))
+				#end = max(end, element.find('、'))
+				end = max(end, element.find('；'))
+				#end = max(end, element.find('。'))
+				#end = max(end, element.find(' '))
+				temp_str = element[start+3 : end]
+				item['merchant'] = temp_str.decode('utf-8')
+				'''
 				pos_1 = max(pos_1_1, pos_1_2)
 				
 				if element.find(',') > -1 :	
@@ -77,12 +87,26 @@ class shzfcgSpider(CrawlSpider):
 				
 				else :
 					item['merchant'] = element[pos_1:]
+				'''
 				
+			element = element.decode("utf-8")
+			
 			if pos_2_1 >=0 or pos_2_2 >=0 or pos_2_3 >=0 or pos_2_4 >=0 :
 				item['date'] = re.compile('\d{4}\D\d+\D\d+').search(element).group()
 				
 			if pos_3_1 > -1 or pos_3_2 > -1 or pos_3_3 > -1 or pos_3_4 > -1 or pos_3_5 > -1 or pos_3_6 > -1 :
-
+				'''
+				start1 = max(pos_3_1, pos_3_2)
+				start2 = max(pos_3_3, pos_3_4)
+				start3 = max(pos_3_5, pos_3_6)
+				start4 = max(start1, start2)
+				start = max(start3, start4)
+				 
+				element.encode("utf-8")
+				temp_str1 = element[start:-1]
+				temp_str = temp_str1.decode("utf-8")
+				element = element.decode("utf-8")
+				'''
 				oldPrice = re.compile('\d+\,?\d+\,?\d+\.?\d*').search(element).group()
 				p = re.compile("\d+,\d+?")
 				for com in p.finditer(oldPrice):
