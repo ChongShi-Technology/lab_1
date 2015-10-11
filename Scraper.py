@@ -2,13 +2,8 @@
 # -*- coding: utf-8 -*-
 # @Author: 骆克云
 # @Date:   2015-10-03 20:47:24
-<<<<<<< HEAD
-# @Last Modified by:   陈睿进
-# @Last Modified time: 2015-10-10 12:33:55
-=======
 # @Last Modified by:   骆克云
 # @Last Modified time: 2015-10-11 10:48:13
->>>>>>> fd485ad552579cc76cc4448fdb7e1d7d1b7e6f8b
 
 from PyQt4 import QtCore,QtGui
 from pymongo import MongoClient
@@ -283,18 +278,11 @@ class QueryPage(QtGui.QWidget):
         fromDate=unicode(self.fromDateEdit.date().toString("yyyy-MM-dd"))
         toDate=unicode(self.toDateEdit.date().toString("yyyy-MM-dd"))
         lowPrice=unicode(self.priceLowSpinBox.value())
-<<<<<<< HEAD
-	lowPrice=lowPrice.encode('utf-8')
-        highPrice=unicode(self.priceHighSpinBox.value()*10000)
-	highPrice=highPrice.encode('utf-8')
-=======
+
         lowPrice=lowPrice.encode("utf-8")
         highPrice=unicode(self.priceHighSpinBox.value()*10000)
         highPrice=highPrice.encode("utf-8")
->>>>>>> fd485ad552579cc76cc4448fdb7e1d7d1b7e6f8b
-
         
-       # print type(str(fromDate)) {"date":{"$lt":str(fromDate)}} ,{"price":{"$gte":str(lowPrice),"lte":str(highPrice)}}
         client=MongoClient()
         db=client.shzfcg
         collection=db.caigou
