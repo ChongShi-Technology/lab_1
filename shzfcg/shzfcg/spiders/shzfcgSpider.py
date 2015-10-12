@@ -70,7 +70,10 @@ class shzfcgSpider(CrawlSpider):
 			'''
 
 			pos_1_1 = element.find(u"供应商：") # 成交供应商 和 中标供应商
+			#pos_1_1 = max(element.find(u"供应商："), element.find(u"供应商： "))
 			pos_1_2 = element.find(u"中标单位：")
+			pos_1_3 = element.find(u"中标人：")
+			#pos_1_2 = max(element.find(u"中标单位："), element.find(u"中标单位： "))
 			
 			pos_2_1 = element.find(u"采购日期")
 			pos_2_2 = element.find(u"评审日期")
@@ -86,8 +89,13 @@ class shzfcgSpider(CrawlSpider):
 			
 			#element = element.decode("utf-8")
 			
-			if pos_1_1 > -1 or pos_1_2 > -1 :
+			if pos_1_1 > -1 or pos_1_2 > -1 or pos_1_3 > -1:
 				#'''
+				start = max(pos_1_1, pos_1_2)
+				start = max(start, pos_1_3)
+				temp_element = element[start:]
+				
+				'''
 				start = max(element.find(u":"),element.find(u"："))
 				end = max(element.find(u","),element.find(u"，"))
 				#end = max(end, element.find('、'))
@@ -95,13 +103,48 @@ class shzfcgSpider(CrawlSpider):
 				#end = max(end, element.find('。'))
 				#end = max(end, element.find(' '))
 				#temp_str = element[start+3 : end]
-				if element.find(u": ") > -1:
+				'''
+				start = max(temp_element.find(u":"),temp_element.find(u"："))
+				#end = max(temp_element.find(u","),temp_element.find(u"，"))
+				flag1 = temp_element.find(u",")
+				flag2 = temp_element.find(u"，")
+				flag3 = temp_element.find(u"；")
+				flag4 = temp_element.find(u" ", 12)
+				flag5 = temp_element.find(u"。")
+				end = max(flag1, flag2, flag3, flag4, flag5)
+				if flag1 > -1 and flag1 < end :
+					end = flag1
+				if flag2 > -1 and flag2 < end :
+					end = flag2
+				if flag3 > -1 and flag3 < end :
+					end = flag3
+				if flag4 > -1 and flag4 < end :
+					end = flag4
+				if flag5 > -1 and flag5 < end :
+					end = flag5
+				#end = max(end, temp_element.find(u" "))
+				#end = max(end, temp_element.find(u"；"))
+				#if temp_element.find(u" ") > -1:
+				#	end = min(end, temp_element.find(u" "))
+				#temp_element = temp_element[start:end]
+				
+				'''
+				if element.find(u": ") > -1 or element.find(u"： ") > -1:
 					temp_str = element[start+2 : end]
 				elif element.find(u"：") > -1:
 					temp_str = element[start+1 : end]
 				else :
 					temp_str = element[start : end]
-				item['merchant'] = temp_str		#.decode('utf-8')
+				'''
+				#item['merchant'] = temp_str		#.decode('utf-8')
+				if temp_element.find(u": ") > -1 or temp_element.find(u"： ") > -1:
+					temp_str = temp_element[start+2 : end]
+				elif temp_element.find(u"：") > -1:
+					temp_str = temp_element[start+1 : end]
+				else :
+					temp_str = temp_element[start : end]
+					
+				item['merchant'] = temp_str
 				#print "merchant:", item['merchant']
 				'''
 				pos_1 = max(pos_1_1, pos_1_2)
