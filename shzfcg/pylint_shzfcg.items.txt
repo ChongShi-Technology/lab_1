@@ -1,0 +1,5 @@
+************* Module shzfcg.items
+C: 15, 0: Trailing whitespace (trailing-whitespace)
+C:  1, 0: Missing module docstring (missing-docstring)
+C: 11, 0: Missing class docstring (missing-docstring)
+R: 11, 0: Too many ancestors (10/7) (too-many-ancestors)

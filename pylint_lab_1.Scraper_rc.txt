@@ -1,0 +1,13 @@
+************* Module lab_1.Scraper_rc
+C:  1, 0: Too many lines in module (1156/1000) (too-many-lines)
+C:  1, 0: Invalid module name "Scraper_rc" (invalid-name)
+C:  1, 0: Missing module docstring (missing-docstring)
+C: 11, 0: Invalid constant name "qt_resource_data" (invalid-name)
+C:1123, 0: Invalid constant name "qt_resource_name" (invalid-name)
+C:1142, 0: Invalid constant name "qt_resource_struct" (invalid-name)
+C:1150, 0: Invalid function name "qInitResources" (invalid-name)
+C:1150, 0: Missing function docstring (missing-docstring)
+E:1151, 4: Module 'PyQt4.QtCore' has no 'qRegisterResourceData' member (no-member)
+C:1153, 0: Invalid function name "qCleanupResources" (invalid-name)
+C:1153, 0: Missing function docstring (missing-docstring)
+E:1154, 4: Module 'PyQt4.QtCore' has no 'qUnregisterResourceData' member (no-member)
