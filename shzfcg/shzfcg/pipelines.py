@@ -19,9 +19,9 @@ class ShzfcgPipeline(object):
         )
         db = connection[settings['MONGODB_DB']]
         self.collection = db[settings['MONGODB_COLLECTION']]
-        
+
     def process_item(self, item, spider):
-        valid=True
+        valid = True
         for data in item:
             if not data:
                 valid = False
@@ -32,8 +32,3 @@ class ShzfcgPipeline(object):
                     level=log.DEBUG, spider=spider)
         return item
 
-'''
-class ShzfcgPipeline(object):
-    def process_item(self, item, spider):
-        return item
-'''

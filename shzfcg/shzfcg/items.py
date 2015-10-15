@@ -1,12 +1,11 @@
-# -*- coding: utf-8 -*-
-
+''' -*- coding: utf-8 -*-
 # Define here the models for your scraped items
 #
 # See documentation in:
 # http://doc.scrapy.org/en/latest/topics/items.html
+'''
 
 from scrapy import Item, Field
-
 
 class ShzfcgItem(Item):
     '''
@@ -14,7 +13,7 @@ class ShzfcgItem(Item):
     # name = scrapy.Field()
     # url = Field()
     '''
-    projName = Field()   
+    projName = Field()
     merchant = Field()
     date = Field()
     price = Field()

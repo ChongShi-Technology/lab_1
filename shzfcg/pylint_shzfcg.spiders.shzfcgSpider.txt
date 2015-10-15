@@ -1,212 +1,57 @@
 ************* Module shzfcg.spiders.shzfcgSpider
-C: 13, 0: Trailing whitespace (trailing-whitespace)
-W: 14, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W: 15, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W: 16, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C: 17, 0: Wrong hanging indentation.
-		"http://www.shzfcg.gov.cn:8090/new_web/cjxx/center_hz_zb.jsp",
-  ^         | (bad-continuation)
-C: 18, 0: Wrong hanging indentation.
-	]
- ^      |   | (bad-continuation)
-W: 19, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C: 20, 0: Wrong hanging indentation.
-    	'content' : SgmlLinkExtractor(allow = 'code=\d+&type=\d+$'),
-     ^      | (bad-continuation)
-C: 20, 0: No space allowed around keyword argument assignment
-    	'content' : SgmlLinkExtractor(allow = 'code=\d+&type=\d+$'),
-                                         ^ (bad-whitespace)
-C: 21, 0: Wrong hanging indentation.
-    }
-    ^   |   | (bad-continuation)
-W: 22, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C: 23, 0: Trailing whitespace (trailing-whitespace)
-W: 24, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W: 25, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C: 26, 0: Trailing whitespace (trailing-whitespace)
-W: 27, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W: 28, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C: 28, 0: No space allowed before :
-			if count > 0 :
-                ^ (bad-whitespace)
-W: 29, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C: 30, 0: Trailing whitespace (trailing-whitespace)
-W: 31, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W: 32, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W: 33, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W: 34, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C: 34, 0: No space allowed before :
-			if pos > -1 :
-               ^ (bad-whitespace)
-W: 35, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W: 36, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C: 37, 0: Line too long (110/100) (line-too-long)
-W: 37, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C: 37, 0: No space allowed around keyword argument assignment
-				yield Request(url = '%s?page=%d' %(shzfcgSpider.start_urls[0] , shzfcgSpider.page), callback = self.parse)
-                      ^ (bad-whitespace)
-C: 37, 0: No space allowed before comma
-				yield Request(url = '%s?page=%d' %(shzfcgSpider.start_urls[0] , shzfcgSpider.page), callback = self.parse)
-                                                                  ^ (bad-whitespace)
-C: 37, 0: No space allowed around keyword argument assignment
-				yield Request(url = '%s?page=%d' %(shzfcgSpider.start_urls[0] , shzfcgSpider.page), callback = self.parse)
-                                                                                                 ^ (bad-whitespace)
-W: 39, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W: 40, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C: 40, 0: No space allowed around keyword argument assignment
-			yield Request(url = link.url, callback=self.parse_page_content)
-                     ^ (bad-whitespace)
-C: 41, 0: Trailing whitespace (trailing-whitespace)
-W: 42, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W: 43, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W: 45, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W: 46, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C: 46, 0: No space allowed before :
-		if tempstr.find('---') > -1 :
-                              ^ (bad-whitespace)
-C: 47, 0: Trailing whitespace (trailing-whitespace)
-W: 47, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W: 48, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C: 48, 0: No space allowed before :
-		else :
-       ^ (bad-whitespace)
-C: 49, 0: Trailing whitespace (trailing-whitespace)
-W: 49, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C: 50, 0: Trailing whitespace (trailing-whitespace)
-W: 51, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C: 52, 0: Trailing whitespace (trailing-whitespace)
-C: 58, 0: Trailing whitespace (trailing-whitespace)
-C: 63, 0: Trailing whitespace (trailing-whitespace)
-W: 53, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W: 72, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W: 73, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C: 74, 0: Trailing whitespace (trailing-whitespace)
-W: 75, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W: 76, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W: 77, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W: 78, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C: 79, 0: Trailing whitespace (trailing-whitespace)
-W: 80, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W: 81, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W: 82, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W: 83, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W: 84, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W: 85, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C: 86, 0: Trailing whitespace (trailing-whitespace)
-C: 88, 0: Trailing whitespace (trailing-whitespace)
-W: 89, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C: 89, 0: No space allowed before :
-			if pos_1_1 > -1 or pos_1_2 > -1 :
-                                   ^ (bad-whitespace)
-W: 91, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C: 91, 0: Exactly one space required after comma
-				start = max(element.find(u":"),element.find(u"£º"))
+C: 46, 0: Line too long (120/100) (line-too-long)
+C: 46, 0: No space allowed around keyword argument assignment
+                yield Request(url = '%s?page=%d' % (shzfcgSpider.start_urls[0],shzfcgSpider.page), callback= self.parse)
                                   ^ (bad-whitespace)
-W: 92, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C: 92, 0: Exactly one space required after comma
-				end = max(element.find(u","),element.find(u"£¬"))
-                                ^ (bad-whitespace)
-W: 94, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W: 98, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W: 99, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W:100, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W:101, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W:102, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C:102, 0: No space allowed before :
-				else :
-         ^ (bad-whitespace)
-W:103, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W:104, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C:108, 0: Trailing whitespace (trailing-whitespace)
-C:109, 0: Trailing whitespace (trailing-whitespace)
-C:111, 0: Trailing whitespace (trailing-whitespace)
-W:106, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C:115, 0: Trailing whitespace (trailing-whitespace)
-C:117, 0: Trailing whitespace (trailing-whitespace)
-W:118, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C:118, 0: Exactly one space required after comparison
-			if pos_2_1 >=0 or pos_2_2 >=0 or pos_2_3 >=0 or pos_2_4 >=0 :
-              ^^ (bad-whitespace)
-C:118, 0: Exactly one space required after comparison
-			if pos_2_1 >=0 or pos_2_2 >=0 or pos_2_3 >=0 or pos_2_4 >=0 :
-                             ^^ (bad-whitespace)
-C:118, 0: Exactly one space required after comparison
-			if pos_2_1 >=0 or pos_2_2 >=0 or pos_2_3 >=0 or pos_2_4 >=0 :
-                                            ^^ (bad-whitespace)
-C:118, 0: Exactly one space required after comparison
-			if pos_2_1 >=0 or pos_2_2 >=0 or pos_2_3 >=0 or pos_2_4 >=0 :
-                                                           ^^ (bad-whitespace)
-C:118, 0: No space allowed before :
-			if pos_2_1 >=0 or pos_2_2 >=0 or pos_2_3 >=0 or pos_2_4 >=0 :
-                                                               ^ (bad-whitespace)
-W:119, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C:120, 0: Trailing whitespace (trailing-whitespace)
-W:121, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C:121, 0: No space allowed before :
-			if pos_3_1 > -1 or pos_3_2 > -1 or pos_3_3 > -1 or pos_3_4 > -1 or pos_3_5 > -1 or pos_3_6 > -1 :
-                                                                                                   ^ (bad-whitespace)
-C:122, 0: Trailing whitespace (trailing-whitespace)
-W:123, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W:124, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W:125, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W:126, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W:127, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C:128, 0: Trailing whitespace (trailing-whitespace)
-W:133, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W:134, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W:137, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W:139, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W:140, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W:141, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W:142, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C:142, 0: Exactly one space required after comma
-					oldPrice = oldPrice.replace(mm, mm.replace(",",""))
+C: 46, 0: Exactly one space required after comma
+                yield Request(url = '%s?page=%d' % (shzfcgSpider.start_urls[0],shzfcgSpider.page), callback= self.parse)
+                                                                              ^ (bad-whitespace)
+C: 46, 0: No space allowed after keyword argument assignment
+                yield Request(url = '%s?page=%d' % (shzfcgSpider.start_urls[0],shzfcgSpider.page), callback= self.parse)
+                                                                                                           ^ (bad-whitespace)
+C: 49, 0: No space allowed after keyword argument assignment
+            yield Request(url= link.url, callback= self.parse_page_content)
+                             ^ (bad-whitespace)
+C: 49, 0: No space allowed after keyword argument assignment
+            yield Request(url= link.url, callback= self.parse_page_content)
+                                                 ^ (bad-whitespace)
+C: 59, 0: Trailing whitespace (trailing-whitespace)
+C: 61, 0: Trailing whitespace (trailing-whitespace)
+C: 87, 0: Exactly one space required after comma
+                start = max(temp_element.find(u":"),temp_element.find(u"£º"))
                                                    ^ (bad-whitespace)
-W:143, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W:145, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W:146, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C:146, 0: No space allowed before :
-				if end > -1 :
-                ^ (bad-whitespace)
-W:147, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C:149, 0: Trailing whitespace (trailing-whitespace)
-W:149, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-C:149, 0: No space allowed before :
-		if item["projName"].find(u"Ê§°Ü¹«¸æ") == -1 :	
-                                          ^ (bad-whitespace)
-W:150, 0: Found indentation with tabs instead of spaces (mixed-indentation)
-W: 20, 0: Anomalous backslash in string: '\d'. String constant might be missing an r prefix. (anomalous-backslash-in-string)
-W: 20, 0: Anomalous backslash in string: '\d'. String constant might be missing an r prefix. (anomalous-backslash-in-string)
-W:119, 0: Anomalous backslash in string: '\d'. String constant might be missing an r prefix. (anomalous-backslash-in-string)
-W:119, 0: Anomalous backslash in string: '\D'. String constant might be missing an r prefix. (anomalous-backslash-in-string)
-W:119, 0: Anomalous backslash in string: '\d'. String constant might be missing an r prefix. (anomalous-backslash-in-string)
-W:119, 0: Anomalous backslash in string: '\D'. String constant might be missing an r prefix. (anomalous-backslash-in-string)
-W:119, 0: Anomalous backslash in string: '\d'. String constant might be missing an r prefix. (anomalous-backslash-in-string)
-W:137, 0: Anomalous backslash in string: '\d'. String constant might be missing an r prefix. (anomalous-backslash-in-string)
-W:137, 0: Anomalous backslash in string: '\,'. String constant might be missing an r prefix. (anomalous-backslash-in-string)
-W:137, 0: Anomalous backslash in string: '\d'. String constant might be missing an r prefix. (anomalous-backslash-in-string)
-W:137, 0: Anomalous backslash in string: '\,'. String constant might be missing an r prefix. (anomalous-backslash-in-string)
-W:137, 0: Anomalous backslash in string: '\d'. String constant might be missing an r prefix. (anomalous-backslash-in-string)
-W:137, 0: Anomalous backslash in string: '\.'. String constant might be missing an r prefix. (anomalous-backslash-in-string)
-W:137, 0: Anomalous backslash in string: '\d'. String constant might be missing an r prefix. (anomalous-backslash-in-string)
-W:139, 0: Anomalous backslash in string: '\d'. String constant might be missing an r prefix. (anomalous-backslash-in-string)
-W:139, 0: Anomalous backslash in string: '\d'. String constant might be missing an r prefix. (anomalous-backslash-in-string)
+C:109, 0: No space allowed before :
+                else :
+                     ^ (bad-whitespace)
+C:114, 0: Exactly one space required after comparison
+            if pos_2_1 >=0 or pos_2_2 >=0 or pos_2_3 >=0 or pos_2_4 >=0:
+                       ^^ (bad-whitespace)
+C:114, 0: Exactly one space required after comparison
+            if pos_2_1 >=0 or pos_2_2 >=0 or pos_2_3 >=0 or pos_2_4 >=0:
+                                      ^^ (bad-whitespace)
+C:114, 0: Exactly one space required after comparison
+            if pos_2_1 >=0 or pos_2_2 >=0 or pos_2_3 >=0 or pos_2_4 >=0:
+                                                     ^^ (bad-whitespace)
+C:114, 0: Exactly one space required after comparison
+            if pos_2_1 >=0 or pos_2_2 >=0 or pos_2_3 >=0 or pos_2_4 >=0:
+                                                                    ^^ (bad-whitespace)
+C:117, 0: Line too long (108/100) (line-too-long)
+C:132, 0: No space allowed before comma
+                    oldPrice = oldPrice.replace(mm, mm.replace("," , ""))
+                                                                   ^ (bad-whitespace)
+C:138, 0: Trailing whitespace (trailing-whitespace)
 C:  1, 0: Invalid module name "shzfcgSpider" (invalid-name)
-C:  1, 0: Missing module docstring (missing-docstring)
-C: 12, 0: Invalid class name "shzfcgSpider" (invalid-name)
-C: 12, 0: Missing class docstring (missing-docstring)
-C: 42, 1: Missing method docstring (missing-docstring)
-R: 42, 1: Too many local variables (28/15) (too-many-locals)
-W: 70,-1: String statement has no effect (pointless-string-statement)
-W:114,-1: String statement has no effect (pointless-string-statement)
-C:137, 4: Invalid variable name "oldPrice" (invalid-name)
-C:139, 4: Invalid variable name "p" (invalid-name)
-C:141, 5: Invalid variable name "mm" (invalid-name)
-C:142, 5: Invalid variable name "oldPrice" (invalid-name)
-C:143, 4: Invalid variable name "oldPrice" (invalid-name)
-R: 42, 1: Method could be a function (no-self-use)
-R: 42, 1: Too many statements (51/50) (too-many-statements)
-W:  3, 0: Unused import scrapy (unused-import)
-W:  5, 0: Unused log imported from scrapy (unused-import)
-W:  6, 0: Unused Rule imported from scrapy.spiders (unused-import)
-W:  7, 0: Unused LinkExtractor imported from scrapy.linkextractors (unused-import)
+C: 13, 0: Invalid class name "shzfcgSpider" (invalid-name)
+R: 51, 4: Too many local variables (35/15) (too-many-locals)
+C:128,16: Invalid variable name "oldPrice" (invalid-name)
+C:129,16: Invalid variable name "p" (invalid-name)
+C:131,20: Invalid variable name "mm" (invalid-name)
+C:132,20: Invalid variable name "oldPrice" (invalid-name)
+C:133,16: Invalid variable name "oldPrice" (invalid-name)
+R: 51, 4: Method could be a function (no-self-use)
+R: 51, 4: Too many branches (17/12) (too-many-branches)
+R: 51, 4: Too many statements (67/50) (too-many-statements)
+W:  4, 0: Unused import scrapy (unused-import)
+W:  6, 0: Unused log imported from scrapy (unused-import)
+W:  7, 0: Unused Rule imported from scrapy.spiders (unused-import)
+W:  8, 0: Unused LinkExtractor imported from scrapy.linkextractors (unused-import)
