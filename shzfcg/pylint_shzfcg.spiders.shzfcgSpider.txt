@@ -1,0 +1,57 @@
+************* Module shzfcg.spiders.shzfcgSpider
+C: 46, 0: Line too long (120/100) (line-too-long)
+C: 46, 0: No space allowed around keyword argument assignment
+                yield Request(url = '%s?page=%d' % (shzfcgSpider.start_urls[0],shzfcgSpider.page), callback= self.parse)
+                                  ^ (bad-whitespace)
+C: 46, 0: Exactly one space required after comma
+                yield Request(url = '%s?page=%d' % (shzfcgSpider.start_urls[0],shzfcgSpider.page), callback= self.parse)
+                                                                              ^ (bad-whitespace)
+C: 46, 0: No space allowed after keyword argument assignment
+                yield Request(url = '%s?page=%d' % (shzfcgSpider.start_urls[0],shzfcgSpider.page), callback= self.parse)
+                                                                                                           ^ (bad-whitespace)
+C: 49, 0: No space allowed after keyword argument assignment
+            yield Request(url= link.url, callback= self.parse_page_content)
+                             ^ (bad-whitespace)
+C: 49, 0: No space allowed after keyword argument assignment
+            yield Request(url= link.url, callback= self.parse_page_content)
+                                                 ^ (bad-whitespace)
+C: 59, 0: Trailing whitespace (trailing-whitespace)
+C: 61, 0: Trailing whitespace (trailing-whitespace)
+C: 87, 0: Exactly one space required after comma
+                start = max(temp_element.find(u":"),temp_element.find(u"£º"))
+                                                   ^ (bad-whitespace)
+C:109, 0: No space allowed before :
+                else :
+                     ^ (bad-whitespace)
+C:114, 0: Exactly one space required after comparison
+            if pos_2_1 >=0 or pos_2_2 >=0 or pos_2_3 >=0 or pos_2_4 >=0:
+                       ^^ (bad-whitespace)
+C:114, 0: Exactly one space required after comparison
+            if pos_2_1 >=0 or pos_2_2 >=0 or pos_2_3 >=0 or pos_2_4 >=0:
+                                      ^^ (bad-whitespace)
+C:114, 0: Exactly one space required after comparison
+            if pos_2_1 >=0 or pos_2_2 >=0 or pos_2_3 >=0 or pos_2_4 >=0:
+                                                     ^^ (bad-whitespace)
+C:114, 0: Exactly one space required after comparison
+            if pos_2_1 >=0 or pos_2_2 >=0 or pos_2_3 >=0 or pos_2_4 >=0:
+                                                                    ^^ (bad-whitespace)
+C:117, 0: Line too long (108/100) (line-too-long)
+C:132, 0: No space allowed before comma
+                    oldPrice = oldPrice.replace(mm, mm.replace("," , ""))
+                                                                   ^ (bad-whitespace)
+C:138, 0: Trailing whitespace (trailing-whitespace)
+C:  1, 0: Invalid module name "shzfcgSpider" (invalid-name)
+C: 13, 0: Invalid class name "shzfcgSpider" (invalid-name)
+R: 51, 4: Too many local variables (35/15) (too-many-locals)
+C:128,16: Invalid variable name "oldPrice" (invalid-name)
+C:129,16: Invalid variable name "p" (invalid-name)
+C:131,20: Invalid variable name "mm" (invalid-name)
+C:132,20: Invalid variable name "oldPrice" (invalid-name)
+C:133,16: Invalid variable name "oldPrice" (invalid-name)
+R: 51, 4: Method could be a function (no-self-use)
+R: 51, 4: Too many branches (17/12) (too-many-branches)
+R: 51, 4: Too many statements (67/50) (too-many-statements)
+W:  4, 0: Unused import scrapy (unused-import)
+W:  6, 0: Unused log imported from scrapy (unused-import)
+W:  7, 0: Unused Rule imported from scrapy.spiders (unused-import)
+W:  8, 0: Unused LinkExtractor imported from scrapy.linkextractors (unused-import)

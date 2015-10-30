@@ -1,0 +1,706 @@
+************* Module lab_1.Scraper
+C:  8, 0: Exactly one space required after comma
+from PyQt4 import QtCore,QtGui
+                        ^ (bad-whitespace)
+C: 34, 0: Exactly one space required around assignment
+        spiderLabel=QtGui.QLabel(u"爬取模块:")
+                   ^ (bad-whitespace)
+C: 35, 0: Exactly one space required around assignment
+        spiderEdit=QtGui.QLineEdit()
+                  ^ (bad-whitespace)
+C: 38, 0: Trailing whitespace (trailing-whitespace)
+C: 40, 0: Exactly one space required around assignment
+        projectLayout=QtGui.QGridLayout()
+                     ^ (bad-whitespace)
+C: 41, 0: Exactly one space required after comma
+        projectLayout.addWidget(projectLabel,0,0)
+                                            ^ (bad-whitespace)
+C: 41, 0: Exactly one space required after comma
+        projectLayout.addWidget(projectLabel,0,0)
+                                              ^ (bad-whitespace)
+C: 42, 0: Exactly one space required after comma
+        projectLayout.addWidget(projectEdit,0,1)
+                                           ^ (bad-whitespace)
+C: 42, 0: Exactly one space required after comma
+        projectLayout.addWidget(projectEdit,0,1)
+                                             ^ (bad-whitespace)
+C: 43, 0: Exactly one space required after comma
+        projectLayout.addWidget(serverLabel,1,0)
+                                           ^ (bad-whitespace)
+C: 43, 0: Exactly one space required after comma
+        projectLayout.addWidget(serverLabel,1,0)
+                                             ^ (bad-whitespace)
+C: 44, 0: Exactly one space required after comma
+        projectLayout.addWidget(serverCombo,1,1)
+                                           ^ (bad-whitespace)
+C: 44, 0: Exactly one space required after comma
+        projectLayout.addWidget(serverCombo,1,1)
+                                             ^ (bad-whitespace)
+C: 45, 0: Exactly one space required after comma
+        projectLayout.addWidget(spiderLabel,2,0)
+                                           ^ (bad-whitespace)
+C: 45, 0: Exactly one space required after comma
+        projectLayout.addWidget(spiderLabel,2,0)
+                                             ^ (bad-whitespace)
+C: 46, 0: Exactly one space required after comma
+        projectLayout.addWidget(spiderEdit,2,1)
+                                          ^ (bad-whitespace)
+C: 46, 0: Exactly one space required after comma
+        projectLayout.addWidget(spiderEdit,2,1)
+                                            ^ (bad-whitespace)
+C: 51, 0: Exactly one space required around assignment
+        parameterGroup=QtGui.QGroupBox(u"参数分析-域设置")
+                      ^ (bad-whitespace)
+C: 52, 0: Trailing whitespace (trailing-whitespace)
+C: 53, 0: Exactly one space required before assignment
+        fieldList= QtGui.QListWidget()
+                 ^ (bad-whitespace)
+C: 54, 0: Trailing whitespace (trailing-whitespace)
+C: 55, 0: Exactly one space required around assignment
+        projNameItem=QtGui.QListWidgetItem(fieldList)
+                    ^ (bad-whitespace)
+C: 57, 0: Exactly one space required around assignment
+        merchantItem=QtGui.QListWidgetItem(fieldList)
+                    ^ (bad-whitespace)
+C: 59, 0: Exactly one space required around assignment
+        dateItem=QtGui.QListWidgetItem(fieldList)
+                ^ (bad-whitespace)
+C: 61, 0: Exactly one space required around assignment
+        priceItem=QtGui.QListWidgetItem(fieldList)
+                 ^ (bad-whitespace)
+C: 64, 0: Exactly one space required before assignment
+        parameterLayout= QtGui.QVBoxLayout()
+                       ^ (bad-whitespace)
+C: 69, 0: Exactly one space required around assignment
+        dataBaseGroup=QtGui.QGroupBox(u"MongoDB数据库")
+                     ^ (bad-whitespace)
+C: 70, 0: Line too long (133/100) (line-too-long)
+C: 70, 0: Exactly one space required around assignment
+        staticData=(("MONGODB_SERVER","localhost"),("MONGODB_PORT","27017"),("MONGODB_DB","shzfcg"),("MONGODB_COLLECTION","caigou"),)
+                  ^ (bad-whitespace)
+C: 70, 0: Exactly one space required after comma
+        staticData=(("MONGODB_SERVER","localhost"),("MONGODB_PORT","27017"),("MONGODB_DB","shzfcg"),("MONGODB_COLLECTION","caigou"),)
+                                     ^ (bad-whitespace)
+C: 70, 0: Exactly one space required after comma
+        staticData=(("MONGODB_SERVER","localhost"),("MONGODB_PORT","27017"),("MONGODB_DB","shzfcg"),("MONGODB_COLLECTION","caigou"),)
+                                                  ^ (bad-whitespace)
+C: 70, 0: Exactly one space required after comma
+        staticData=(("MONGODB_SERVER","localhost"),("MONGODB_PORT","27017"),("MONGODB_DB","shzfcg"),("MONGODB_COLLECTION","caigou"),)
+                                                                  ^ (bad-whitespace)
+C: 70, 0: Exactly one space required after comma
+        staticData=(("MONGODB_SERVER","localhost"),("MONGODB_PORT","27017"),("MONGODB_DB","shzfcg"),("MONGODB_COLLECTION","caigou"),)
+                                                                           ^ (bad-whitespace)
+C: 70, 0: Exactly one space required after comma
+        staticData=(("MONGODB_SERVER","localhost"),("MONGODB_PORT","27017"),("MONGODB_DB","shzfcg"),("MONGODB_COLLECTION","caigou"),)
+                                                                                         ^ (bad-whitespace)
+C: 70, 0: Exactly one space required after comma
+        staticData=(("MONGODB_SERVER","localhost"),("MONGODB_PORT","27017"),("MONGODB_DB","shzfcg"),("MONGODB_COLLECTION","caigou"),)
+                                                                                                   ^ (bad-whitespace)
+C: 70, 0: Exactly one space required after comma
+        staticData=(("MONGODB_SERVER","localhost"),("MONGODB_PORT","27017"),("MONGODB_DB","shzfcg"),("MONGODB_COLLECTION","caigou"),)
+                                                                                                                         ^ (bad-whitespace)
+C: 76, 0: Exactly one space required after comma
+        for row,(mongoParameter,mongoValue) in enumerate(staticData):
+               ^ (bad-whitespace)
+C: 76, 0: Exactly one space required after comma
+        for row,(mongoParameter,mongoValue) in enumerate(staticData):
+                               ^ (bad-whitespace)
+C: 77, 0: Exactly one space required around assignment
+            item0=QtGui.QTableWidgetItem(mongoParameter)
+                 ^ (bad-whitespace)
+C: 78, 0: Exactly one space required around assignment
+            item1=QtGui.QTableWidgetItem(mongoValue)
+                 ^ (bad-whitespace)
+C: 79, 0: Exactly one space required after comma
+            tableWidget.setItem(row,0,item0)
+                                   ^ (bad-whitespace)
+C: 79, 0: Exactly one space required after comma
+            tableWidget.setItem(row,0,item0)
+                                     ^ (bad-whitespace)
+C: 80, 0: Exactly one space required after comma
+            tableWidget.setItem(row,1,item1)
+                                   ^ (bad-whitespace)
+C: 80, 0: Exactly one space required after comma
+            tableWidget.setItem(row,1,item1)
+                                     ^ (bad-whitespace)
+C: 83, 0: Exactly one space required around assignment
+        mongoDBLayout=QtGui.QVBoxLayout()
+                     ^ (bad-whitespace)
+C:100, 0: Exactly one space required around assignment
+        self.success=True
+                    ^ (bad-whitespace)
+C:103, 0: Exactly one space required around assignment
+        startButton=QtGui.QPushButton(u"开始")
+                   ^ (bad-whitespace)
+C:109, 0: Trailing whitespace (trailing-whitespace)
+C:116, 0: Exactly one space required around assignment
+        resultGroup=QtGui.QGroupBox(u"爬虫结果")
+                   ^ (bad-whitespace)
+C:117, 0: Exactly one space required around assignment
+        self.table=QtGui.QTableWidget(0,4)
+                  ^ (bad-whitespace)
+C:117, 0: Exactly one space required after comma
+        self.table=QtGui.QTableWidget(0,4)
+                                       ^ (bad-whitespace)
+C:120, 0: Exactly one space required after comma
+        headerLabels = (u"项目名称", u"成交供应商",u"采购日期",u"成交金额")
+                                         ^ (bad-whitespace)
+C:120, 0: Exactly one space required after comma
+        headerLabels = (u"项目名称", u"成交供应商",u"采购日期",u"成交金额")
+                                                 ^ (bad-whitespace)
+C:124, 0: Exactly one space required after comma
+        self.table.setColumnWidth(0,400)
+                                   ^ (bad-whitespace)
+C:125, 0: Exactly one space required after comma
+        self.table.setColumnWidth(1,200)
+                                   ^ (bad-whitespace)
+C:128, 0: Exactly one space required around assignment
+        resultLayout=QtGui.QVBoxLayout()
+                    ^ (bad-whitespace)
+C:139, 0: Trailing whitespace (trailing-whitespace)
+C:144, 0: Exactly one space required around assignment
+        self.success=True
+                    ^ (bad-whitespace)
+C:146, 0: Exactly one space required around assignment
+        client=MongoClient()
+              ^ (bad-whitespace)
+C:147, 0: Exactly one space required around assignment
+        db=client.shzfcg
+          ^ (bad-whitespace)
+C:149, 0: Trailing whitespace (trailing-whitespace)
+C:155, 0: Line too long (114/100) (line-too-long)
+C:155, 0: Exactly one space required around assignment
+        p=subprocess.Popen("scrapy crawl shzfcgSpider",shell=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+         ^ (bad-whitespace)
+C:155, 0: Exactly one space required after comma
+        p=subprocess.Popen("scrapy crawl shzfcgSpider",shell=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+                                                      ^ (bad-whitespace)
+C:155, 0: Exactly one space required after comma
+        p=subprocess.Popen("scrapy crawl shzfcgSpider",shell=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+                                                                 ^ (bad-whitespace)
+C:155, 0: Exactly one space required after comma
+        p=subprocess.Popen("scrapy crawl shzfcgSpider",shell=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+                                                                                        ^ (bad-whitespace)
+C:163, 0: Exactly one space required around assignment
+        retval=p.wait()
+              ^ (bad-whitespace)
+C:164, 0: Exactly one space required around comparison
+        if p.returncode!=0:
+                       ^^ (bad-whitespace)
+C:169, 0: Trailing whitespace (trailing-whitespace)
+C:171, 0: Exactly one space required after comma
+    def showResult(self,isShow):
+                       ^ (bad-whitespace)
+C:174, 0: Exactly one space required around assignment
+        client=MongoClient()
+              ^ (bad-whitespace)
+C:175, 0: Exactly one space required around assignment
+        db=client.shzfcg
+          ^ (bad-whitespace)
+C:176, 0: Exactly one space required around assignment
+        collection=db.caigou
+                  ^ (bad-whitespace)
+C:178, 0: Exactly one space required around assignment
+        row=0
+           ^ (bad-whitespace)
+C:180, 0: Exactly one space required around assignment
+            item0=QtGui.QTableWidgetItem(p.get("projName","-1"))
+                 ^ (bad-whitespace)
+C:180, 0: Exactly one space required after comma
+            item0=QtGui.QTableWidgetItem(p.get("projName","-1"))
+                                                         ^ (bad-whitespace)
+C:181, 0: Exactly one space required around assignment
+            item1=QtGui.QTableWidgetItem(p.get("merchant","-1"))
+                 ^ (bad-whitespace)
+C:181, 0: Exactly one space required after comma
+            item1=QtGui.QTableWidgetItem(p.get("merchant","-1"))
+                                                         ^ (bad-whitespace)
+C:182, 0: Exactly one space required around assignment
+            item2=QtGui.QTableWidgetItem(p.get("date","-1"))
+                 ^ (bad-whitespace)
+C:182, 0: Exactly one space required after comma
+            item2=QtGui.QTableWidgetItem(p.get("date","-1"))
+                                                     ^ (bad-whitespace)
+C:183, 0: Exactly one space required around assignment
+            item3=QtGui.QTableWidgetItem(unicode(str(p.get("price","-1")))) #utf-8-->unicode
+                 ^ (bad-whitespace)
+C:183, 0: Exactly one space required after comma
+            item3=QtGui.QTableWidgetItem(unicode(str(p.get("price","-1")))) #utf-8-->unicode
+                                                                  ^ (bad-whitespace)
+C:185, 0: Exactly one space required after comma
+            self.table.setItem(row,0,item0)
+                                  ^ (bad-whitespace)
+C:185, 0: Exactly one space required after comma
+            self.table.setItem(row,0,item0)
+                                    ^ (bad-whitespace)
+C:186, 0: Exactly one space required after comma
+            self.table.setItem(row,1,item1)
+                                  ^ (bad-whitespace)
+C:186, 0: Exactly one space required after comma
+            self.table.setItem(row,1,item1)
+                                    ^ (bad-whitespace)
+C:187, 0: Exactly one space required after comma
+            self.table.setItem(row,2,item2)
+                                  ^ (bad-whitespace)
+C:187, 0: Exactly one space required after comma
+            self.table.setItem(row,2,item2)
+                                    ^ (bad-whitespace)
+C:188, 0: Exactly one space required after comma
+            self.table.setItem(row,3,item3)
+                                  ^ (bad-whitespace)
+C:188, 0: Exactly one space required after comma
+            self.table.setItem(row,3,item3)
+                                    ^ (bad-whitespace)
+C:189, 0: Exactly one space required around assignment
+            row=row+1
+               ^ (bad-whitespace)
+C:191, 0: Trailing whitespace (trailing-whitespace)
+C:217, 0: Exactly one space required around assignment
+        priceLabel=QtGui.QLabel(u"金额:")
+                  ^ (bad-whitespace)
+C:238, 0: Exactly one space required around assignment
+        clearQueryButton=QtGui.QPushButton(u"清除结果")
+                        ^ (bad-whitespace)
+C:241, 0: Exactly one space required around assignment
+        resultGroup=QtGui.QGroupBox(u"爬虫结果")
+                   ^ (bad-whitespace)
+C:242, 0: Exactly one space required around assignment
+        self.table=QtGui.QTableWidget(0,4)
+                  ^ (bad-whitespace)
+C:242, 0: Exactly one space required after comma
+        self.table=QtGui.QTableWidget(0,4)
+                                       ^ (bad-whitespace)
+C:244, 0: Exactly one space required after comma
+        headerLabels = (u"项目名称", u"成交供应商",u"采购日期",u"成交金额")
+                                         ^ (bad-whitespace)
+C:244, 0: Exactly one space required after comma
+        headerLabels = (u"项目名称", u"成交供应商",u"采购日期",u"成交金额")
+                                                 ^ (bad-whitespace)
+C:246, 0: Exactly one space required after comma
+        self.table.setColumnWidth(0,400)
+                                   ^ (bad-whitespace)
+C:247, 0: Exactly one space required after comma
+        self.table.setColumnWidth(1,200)
+                                   ^ (bad-whitespace)
+C:251, 0: Exactly one space required around assignment
+        resultLayout=QtGui.QVBoxLayout()
+                    ^ (bad-whitespace)
+C:264, 0: Exactly one space required after comma
+        packagesLayout.addWidget(priceLabel,2,0)
+                                           ^ (bad-whitespace)
+C:264, 0: Exactly one space required after comma
+        packagesLayout.addWidget(priceLabel,2,0)
+                                             ^ (bad-whitespace)
+C:267, 0: Exactly one space required after comma
+        packagesLayout.addWidget(startQueryButton,3,1)
+                                                 ^ (bad-whitespace)
+C:267, 0: Exactly one space required after comma
+        packagesLayout.addWidget(startQueryButton,3,1)
+                                                   ^ (bad-whitespace)
+C:268, 0: Exactly one space required after comma
+        packagesLayout.addWidget(clearQueryButton,3,3)
+                                                 ^ (bad-whitespace)
+C:268, 0: Exactly one space required after comma
+        packagesLayout.addWidget(clearQueryButton,3,3)
+                                                   ^ (bad-whitespace)
+C:269, 0: Trailing whitespace (trailing-whitespace)
+C:278, 0: Exactly one space required after comma
+        self.showResult(False,queryCollection=[])
+                             ^ (bad-whitespace)
+C:280, 0: Trailing whitespace (trailing-whitespace)
+C:284, 0: Exactly one space required around assignment
+        projName=unicode(self.projEdit.text())
+                ^ (bad-whitespace)
+C:285, 0: Exactly one space required around assignment
+        merchant=unicode(self.merchantEdit.text())
+                ^ (bad-whitespace)
+C:286, 0: Exactly one space required around assignment
+        fromDate=unicode(self.fromDateEdit.date().toString("yyyy-MM-dd"))
+                ^ (bad-whitespace)
+C:287, 0: Exactly one space required around assignment
+        toDate=unicode(self.toDateEdit.date().toString("yyyy-MM-dd"))
+              ^ (bad-whitespace)
+C:288, 0: Exactly one space required around assignment
+        lowPrice=unicode(self.priceLowSpinBox.value())
+                ^ (bad-whitespace)
+C:290, 0: Exactly one space required around assignment
+        lowPrice=lowPrice.encode("utf-8")
+                ^ (bad-whitespace)
+C:291, 0: Exactly one space required around assignment
+        highPrice=unicode(self.priceHighSpinBox.value()*10000)
+                 ^ (bad-whitespace)
+C:292, 0: Exactly one space required around assignment
+        highPrice=highPrice.encode("utf-8")
+                 ^ (bad-whitespace)
+C:293, 0: Trailing whitespace (trailing-whitespace)
+C:294, 0: Exactly one space required around assignment
+        client=MongoClient()
+              ^ (bad-whitespace)
+C:295, 0: Exactly one space required around assignment
+        db=client.shzfcg
+          ^ (bad-whitespace)
+C:296, 0: Exactly one space required around assignment
+        collection=db.caigou
+                  ^ (bad-whitespace)
+C:297, 0: Exactly one space required around assignment
+        highPrice=int(highPrice)-1
+                 ^ (bad-whitespace)
+C:298, 0: Exactly one space required around comparison
+        if projName!="" and merchant=="":
+                   ^^ (bad-whitespace)
+C:298, 0: Exactly one space required around comparison
+        if projName!="" and merchant=="":
+                                    ^^ (bad-whitespace)
+C:299, 0: Line too long (183/100) (line-too-long)
+C:299, 0: Exactly one space required around assignment
+            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"projName":{"$regex":projName},"price":{"$gte":float(lowPrice),"$lte":float(highPrice)}})
+                           ^ (bad-whitespace)
+C:299, 0: Exactly one space required after comma
+            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"projName":{"$regex":projName},"price":{"$gte":float(lowPrice),"$lte":float(highPrice)}})
+                                                                         ^ (bad-whitespace)
+C:299, 0: Exactly one space required after comma
+            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"projName":{"$regex":projName},"price":{"$gte":float(lowPrice),"$lte":float(highPrice)}})
+                                                                                             ^ (bad-whitespace)
+C:299, 0: Exactly one space required after comma
+            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"projName":{"$regex":projName},"price":{"$gte":float(lowPrice),"$lte":float(highPrice)}})
+                                                                                                                            ^ (bad-whitespace)
+C:299, 0: Exactly one space required after comma
+            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"projName":{"$regex":projName},"price":{"$gte":float(lowPrice),"$lte":float(highPrice)}})
+                                                                                                                                                            ^ (bad-whitespace)
+C:300, 0: Exactly one space required after comparison
+        elif projName !="" and merchant!="":
+                      ^^ (bad-whitespace)
+C:300, 0: Exactly one space required around comparison
+        elif projName !="" and merchant!="":
+                                       ^^ (bad-whitespace)
+C:301, 0: Line too long (214/100) (line-too-long)
+C:301, 0: Exactly one space required around assignment
+            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"projName":{"$regex":projName},"merchant":{"$regex":merchant},"price":{"$gte":float(lowPrice),"$lte":float(highPrice)}})
+                           ^ (bad-whitespace)
+C:301, 0: Exactly one space required after comma
+            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"projName":{"$regex":projName},"merchant":{"$regex":merchant},"price":{"$gte":float(lowPrice),"$lte":float(highPrice)}})
+                                                                         ^ (bad-whitespace)
+C:301, 0: Exactly one space required after comma
+            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"projName":{"$regex":projName},"merchant":{"$regex":merchant},"price":{"$gte":float(lowPrice),"$lte":float(highPrice)}})
+                                                                                             ^ (bad-whitespace)
+C:301, 0: Exactly one space required after comma
+            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"projName":{"$regex":projName},"merchant":{"$regex":merchant},"price":{"$gte":float(lowPrice),"$lte":float(highPrice)}})
+                                                                                                                            ^ (bad-whitespace)
+C:301, 0: Exactly one space required after comma
+            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"projName":{"$regex":projName},"merchant":{"$regex":merchant},"price":{"$gte":float(lowPrice),"$lte":float(highPrice)}})
+                                                                                                                                                           ^ (bad-whitespace)
+C:301, 0: Exactly one space required after comma
+            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"projName":{"$regex":projName},"merchant":{"$regex":merchant},"price":{"$gte":float(lowPrice),"$lte":float(highPrice)}})
+                                                                                                                                                                                           ^ (bad-whitespace)
+C:302, 0: Exactly one space required around comparison
+        elif projName=="" and merchant!="":
+                     ^^ (bad-whitespace)
+C:302, 0: Exactly one space required around comparison
+        elif projName=="" and merchant!="":
+                                      ^^ (bad-whitespace)
+C:303, 0: Line too long (183/100) (line-too-long)
+C:303, 0: Exactly one space required around assignment
+            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"merchant":{"$regex":merchant},"price":{"$gte":float(lowPrice),"$lte":float(highPrice)}})
+                           ^ (bad-whitespace)
+C:303, 0: Exactly one space required after comma
+            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"merchant":{"$regex":merchant},"price":{"$gte":float(lowPrice),"$lte":float(highPrice)}})
+                                                                         ^ (bad-whitespace)
+C:303, 0: Exactly one space required after comma
+            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"merchant":{"$regex":merchant},"price":{"$gte":float(lowPrice),"$lte":float(highPrice)}})
+                                                                                             ^ (bad-whitespace)
+C:303, 0: Exactly one space required after comma
+            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"merchant":{"$regex":merchant},"price":{"$gte":float(lowPrice),"$lte":float(highPrice)}})
+                                                                                                                            ^ (bad-whitespace)
+C:303, 0: Exactly one space required after comma
+            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"merchant":{"$regex":merchant},"price":{"$gte":float(lowPrice),"$lte":float(highPrice)}})
+                                                                                                                                                            ^ (bad-whitespace)
+C:305, 0: Line too long (152/100) (line-too-long)
+C:305, 0: Exactly one space required around assignment
+            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"price":{"$gte":float(lowPrice),"$lte":float(highPrice)}})
+                           ^ (bad-whitespace)
+C:305, 0: Exactly one space required after comma
+            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"price":{"$gte":float(lowPrice),"$lte":float(highPrice)}})
+                                                                         ^ (bad-whitespace)
+C:305, 0: Exactly one space required after comma
+            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"price":{"$gte":float(lowPrice),"$lte":float(highPrice)}})
+                                                                                             ^ (bad-whitespace)
+C:305, 0: Exactly one space required after comma
+            queryCollection=collection.find({"date":{"$gte":str(fromDate),"$lte":str(toDate)},"price":{"$gte":float(lowPrice),"$lte":float(highPrice)}})
+                                                                                                                             ^ (bad-whitespace)
+C:306, 0: Exactly one space required after comma
+        self.showResult(True,queryCollection)
+                            ^ (bad-whitespace)
+C:312, 0: Exactly one space required after comma
+    def showResult(self,isShow,queryCollection):
+                       ^ (bad-whitespace)
+C:312, 0: Exactly one space required after comma
+    def showResult(self,isShow,queryCollection):
+                              ^ (bad-whitespace)
+C:315, 0: Trailing whitespace (trailing-whitespace)
+C:317, 0: Exactly one space required around assignment
+        row=0
+           ^ (bad-whitespace)
+C:319, 0: Exactly one space required around assignment
+            item0=QtGui.QTableWidgetItem(p.get("projName","-1"))
+                 ^ (bad-whitespace)
+C:319, 0: Exactly one space required after comma
+            item0=QtGui.QTableWidgetItem(p.get("projName","-1"))
+                                                         ^ (bad-whitespace)
+C:320, 0: Exactly one space required around assignment
+            item1=QtGui.QTableWidgetItem(p.get("merchant","-1"))
+                 ^ (bad-whitespace)
+C:320, 0: Exactly one space required after comma
+            item1=QtGui.QTableWidgetItem(p.get("merchant","-1"))
+                                                         ^ (bad-whitespace)
+C:321, 0: Exactly one space required around assignment
+            item2=QtGui.QTableWidgetItem(p.get("date","-1"))
+                 ^ (bad-whitespace)
+C:321, 0: Exactly one space required after comma
+            item2=QtGui.QTableWidgetItem(p.get("date","-1"))
+                                                     ^ (bad-whitespace)
+C:322, 0: Exactly one space required around assignment
+            item3=QtGui.QTableWidgetItem(unicode(str(p.get("price","-1")))) #utf-8-->unicode
+                 ^ (bad-whitespace)
+C:322, 0: Exactly one space required after comma
+            item3=QtGui.QTableWidgetItem(unicode(str(p.get("price","-1")))) #utf-8-->unicode
+                                                                  ^ (bad-whitespace)
+C:323, 0: Exactly one space required after comma
+            self.table.setItem(row,0,item0)
+                                  ^ (bad-whitespace)
+C:323, 0: Exactly one space required after comma
+            self.table.setItem(row,0,item0)
+                                    ^ (bad-whitespace)
+C:324, 0: Exactly one space required after comma
+            self.table.setItem(row,1,item1)
+                                  ^ (bad-whitespace)
+C:324, 0: Exactly one space required after comma
+            self.table.setItem(row,1,item1)
+                                    ^ (bad-whitespace)
+C:325, 0: Exactly one space required after comma
+            self.table.setItem(row,2,item2)
+                                  ^ (bad-whitespace)
+C:325, 0: Exactly one space required after comma
+            self.table.setItem(row,2,item2)
+                                    ^ (bad-whitespace)
+C:326, 0: Exactly one space required after comma
+            self.table.setItem(row,3,item3)
+                                  ^ (bad-whitespace)
+C:326, 0: Exactly one space required after comma
+            self.table.setItem(row,3,item3)
+                                    ^ (bad-whitespace)
+C:327, 0: Exactly one space required around assignment
+            row=row+1
+               ^ (bad-whitespace)
+C:333, 0: Exactly one space required after comma
+        self.setFixedSize(1024,705)
+                              ^ (bad-whitespace)
+C:406, 0: Trailing whitespace (trailing-whitespace)
+C:  1, 0: Missing module docstring (missing-docstring)
+W: 14, 0: Relative import 'Scraper_rc', should be 'lab_1.Scraper_rc' (relative-import)
+C: 16, 0: Missing class docstring (missing-docstring)
+E: 16,24: Module 'PyQt4.QtGui' has no 'QWidget' member (no-member)
+E: 17, 4: Use of super on an old style class (super-on-old-class)
+R: 17, 4: Too many local variables (28/15) (too-many-locals)
+C: 20, 8: Invalid variable name "configGroup" (invalid-name)
+E: 20,22: Module 'PyQt4.QtGui' has no 'QGroupBox' member (no-member)
+C: 23, 8: Invalid variable name "projectLabel" (invalid-name)
+E: 23,23: Module 'PyQt4.QtGui' has no 'QLabel' member (no-member)
+C: 24, 8: Invalid variable name "projectEdit" (invalid-name)
+E: 24,22: Module 'PyQt4.QtGui' has no 'QLineEdit' member (no-member)
+C: 29, 8: Invalid variable name "serverLabel" (invalid-name)
+E: 29,22: Module 'PyQt4.QtGui' has no 'QLabel' member (no-member)
+C: 30, 8: Invalid variable name "serverCombo" (invalid-name)
+E: 30,22: Module 'PyQt4.QtGui' has no 'QComboBox' member (no-member)
+C: 34, 8: Invalid variable name "spiderLabel" (invalid-name)
+E: 34,20: Module 'PyQt4.QtGui' has no 'QLabel' member (no-member)
+C: 35, 8: Invalid variable name "spiderEdit" (invalid-name)
+E: 35,19: Module 'PyQt4.QtGui' has no 'QLineEdit' member (no-member)
+C: 40, 8: Invalid variable name "projectLayout" (invalid-name)
+E: 40,22: Module 'PyQt4.QtGui' has no 'QGridLayout' member (no-member)
+C: 51, 8: Invalid variable name "parameterGroup" (invalid-name)
+E: 51,23: Module 'PyQt4.QtGui' has no 'QGroupBox' member (no-member)
+C: 53, 8: Invalid variable name "fieldList" (invalid-name)
+E: 53,19: Module 'PyQt4.QtGui' has no 'QListWidget' member (no-member)
+C: 55, 8: Invalid variable name "projNameItem" (invalid-name)
+E: 55,21: Module 'PyQt4.QtGui' has no 'QListWidgetItem' member (no-member)
+C: 57, 8: Invalid variable name "merchantItem" (invalid-name)
+E: 57,21: Module 'PyQt4.QtGui' has no 'QListWidgetItem' member (no-member)
+C: 59, 8: Invalid variable name "dateItem" (invalid-name)
+E: 59,17: Module 'PyQt4.QtGui' has no 'QListWidgetItem' member (no-member)
+C: 61, 8: Invalid variable name "priceItem" (invalid-name)
+E: 61,18: Module 'PyQt4.QtGui' has no 'QListWidgetItem' member (no-member)
+C: 64, 8: Invalid variable name "parameterLayout" (invalid-name)
+E: 64,25: Module 'PyQt4.QtGui' has no 'QVBoxLayout' member (no-member)
+C: 69, 8: Invalid variable name "dataBaseGroup" (invalid-name)
+E: 69,22: Module 'PyQt4.QtGui' has no 'QGroupBox' member (no-member)
+C: 70, 8: Invalid variable name "staticData" (invalid-name)
+C: 72, 8: Invalid variable name "tableWidget" (invalid-name)
+E: 72,22: Module 'PyQt4.QtGui' has no 'QTableWidget' member (no-member)
+C: 73, 8: Invalid variable name "headerLabels" (invalid-name)
+C: 76,17: Invalid variable name "mongoParameter" (invalid-name)
+C: 76,32: Invalid variable name "mongoValue" (invalid-name)
+E: 77,18: Module 'PyQt4.QtGui' has no 'QTableWidgetItem' member (no-member)
+E: 78,18: Module 'PyQt4.QtGui' has no 'QTableWidgetItem' member (no-member)
+E: 82,53: Module 'PyQt4.QtGui' has no 'QHeaderView' member (no-member)
+C: 83, 8: Invalid variable name "mongoDBLayout" (invalid-name)
+E: 83,22: Module 'PyQt4.QtGui' has no 'QVBoxLayout' member (no-member)
+C: 88, 8: Invalid variable name "mainLayout" (invalid-name)
+E: 88,21: Module 'PyQt4.QtGui' has no 'QVBoxLayout' member (no-member)
+E: 94, 8: Instance of 'ConfigurationPage' has no 'setLayout' member (no-member)
+R: 17, 4: Too many statements (54/50) (too-many-statements)
+R: 16, 0: Too few public methods (0/2) (too-few-public-methods)
+C:104, 8: Invalid attribute name "textEdit" (invalid-name)
+C: 97, 0: Missing class docstring (missing-docstring)
+E: 97,16: Module 'PyQt4.QtGui' has no 'QWidget' member (no-member)
+E: 98, 4: Use of super on an old style class (super-on-old-class)
+C:102, 8: Invalid variable name "crawlGroup" (invalid-name)
+E:102,21: Module 'PyQt4.QtGui' has no 'QGroupBox' member (no-member)
+C:103, 8: Invalid variable name "startButton" (invalid-name)
+E:103,20: Module 'PyQt4.QtGui' has no 'QPushButton' member (no-member)
+E:104,24: Module 'PyQt4.QtGui' has no 'QTextEdit' member (no-member)
+C:110, 8: Invalid variable name "crawlLayout" (invalid-name)
+E:110,22: Module 'PyQt4.QtGui' has no 'QVBoxLayout' member (no-member)
+C:116, 8: Invalid variable name "resultGroup" (invalid-name)
+E:116,20: Module 'PyQt4.QtGui' has no 'QGroupBox' member (no-member)
+E:117,19: Module 'PyQt4.QtGui' has no 'QTableWidget' member (no-member)
+C:120, 8: Invalid variable name "headerLabels" (invalid-name)
+C:128, 8: Invalid variable name "resultLayout" (invalid-name)
+E:128,21: Module 'PyQt4.QtGui' has no 'QVBoxLayout' member (no-member)
+C:132, 8: Invalid variable name "mainLayout" (invalid-name)
+E:132,21: Module 'PyQt4.QtGui' has no 'QVBoxLayout' member (no-member)
+E:140, 8: Instance of 'CrawlPage' has no 'setLayout' member (no-member)
+C:142, 4: Missing method docstring (missing-docstring)
+C:147, 8: Invalid variable name "db" (invalid-name)
+C:155, 8: Invalid variable name "p" (invalid-name)
+W:161,16: Statement seems to have no effect (pointless-statement)
+W:163, 8: Unused variable 'retval' (unused-variable)
+C:171, 4: Invalid method name "showResult" (invalid-name)
+C:171, 4: Invalid argument name "isShow" (invalid-name)
+C:171, 4: Missing method docstring (missing-docstring)
+C:175, 8: Invalid variable name "db" (invalid-name)
+C:179,12: Invalid variable name "p" (invalid-name)
+E:180,18: Module 'PyQt4.QtGui' has no 'QTableWidgetItem' member (no-member)
+E:181,18: Module 'PyQt4.QtGui' has no 'QTableWidgetItem' member (no-member)
+E:182,18: Module 'PyQt4.QtGui' has no 'QTableWidgetItem' member (no-member)
+E:183,18: Module 'PyQt4.QtGui' has no 'QTableWidgetItem' member (no-member)
+C:211, 8: Invalid attribute name "toDateEdit" (invalid-name)
+C:201, 8: Invalid attribute name "merchantEdit" (invalid-name)
+C:218, 8: Invalid attribute name "priceLowSpinBox" (invalid-name)
+C:204, 8: Invalid attribute name "projEdit" (invalid-name)
+C:227, 8: Invalid attribute name "priceHighSpinBox" (invalid-name)
+C:206, 8: Invalid attribute name "fromDateEdit" (invalid-name)
+C:194, 0: Missing class docstring (missing-docstring)
+E:194,16: Module 'PyQt4.QtGui' has no 'QWidget' member (no-member)
+E:195, 4: Use of super on an old style class (super-on-old-class)
+C:198, 8: Invalid variable name "packagesGroup" (invalid-name)
+E:198,24: Module 'PyQt4.QtGui' has no 'QGroupBox' member (no-member)
+C:200, 8: Invalid variable name "merchantLabel" (invalid-name)
+E:200,24: Module 'PyQt4.QtGui' has no 'QLabel' member (no-member)
+E:201,28: Module 'PyQt4.QtGui' has no 'QLineEdit' member (no-member)
+C:203, 8: Invalid variable name "projLabel" (invalid-name)
+E:203,20: Module 'PyQt4.QtGui' has no 'QLabel' member (no-member)
+E:204,24: Module 'PyQt4.QtGui' has no 'QLineEdit' member (no-member)
+E:206,28: Module 'PyQt4.QtGui' has no 'QDateEdit' member (no-member)
+E:207,34: Module 'PyQt4.QtCore' has no 'QDate' member (no-member)
+C:209, 8: Invalid variable name "fromLabel" (invalid-name)
+E:209,20: Module 'PyQt4.QtGui' has no 'QLabel' member (no-member)
+E:211,26: Module 'PyQt4.QtGui' has no 'QDateEdit' member (no-member)
+E:212,32: Module 'PyQt4.QtCore' has no 'QDate' member (no-member)
+C:214, 8: Invalid variable name "toLabel" (invalid-name)
+E:214,18: Module 'PyQt4.QtGui' has no 'QLabel' member (no-member)
+C:217, 8: Invalid variable name "priceLabel" (invalid-name)
+E:217,19: Module 'PyQt4.QtGui' has no 'QLabel' member (no-member)
+E:218,31: Module 'PyQt4.QtGui' has no 'QSpinBox' member (no-member)
+E:227,32: Module 'PyQt4.QtGui' has no 'QSpinBox' member (no-member)
+C:237, 8: Invalid variable name "startQueryButton" (invalid-name)
+E:237,27: Module 'PyQt4.QtGui' has no 'QPushButton' member (no-member)
+C:238, 8: Invalid variable name "clearQueryButton" (invalid-name)
+E:238,25: Module 'PyQt4.QtGui' has no 'QPushButton' member (no-member)
+C:241, 8: Invalid variable name "resultGroup" (invalid-name)
+E:241,20: Module 'PyQt4.QtGui' has no 'QGroupBox' member (no-member)
+E:242,19: Module 'PyQt4.QtGui' has no 'QTableWidget' member (no-member)
+C:244, 8: Invalid variable name "headerLabels" (invalid-name)
+C:251, 8: Invalid variable name "resultLayout" (invalid-name)
+E:251,21: Module 'PyQt4.QtGui' has no 'QVBoxLayout' member (no-member)
+C:255, 8: Invalid variable name "packagesLayout" (invalid-name)
+E:255,25: Module 'PyQt4.QtGui' has no 'QGridLayout' member (no-member)
+C:272, 8: Invalid variable name "mainLayout" (invalid-name)
+E:272,21: Module 'PyQt4.QtGui' has no 'QVBoxLayout' member (no-member)
+E:281, 8: Instance of 'QueryPage' has no 'setLayout' member (no-member)
+R:195, 4: Too many statements (70/50) (too-many-statements)
+C:283, 4: Invalid method name "queryResult" (invalid-name)
+C:283, 4: Missing method docstring (missing-docstring)
+C:284, 8: Invalid variable name "projName" (invalid-name)
+C:286, 8: Invalid variable name "fromDate" (invalid-name)
+C:287, 8: Invalid variable name "toDate" (invalid-name)
+C:288, 8: Invalid variable name "lowPrice" (invalid-name)
+C:290, 8: Invalid variable name "lowPrice" (invalid-name)
+C:291, 8: Invalid variable name "highPrice" (invalid-name)
+C:292, 8: Invalid variable name "highPrice" (invalid-name)
+C:295, 8: Invalid variable name "db" (invalid-name)
+C:297, 8: Invalid variable name "highPrice" (invalid-name)
+C:299,12: Invalid variable name "queryCollection" (invalid-name)
+C:301,12: Invalid variable name "queryCollection" (invalid-name)
+C:303,12: Invalid variable name "queryCollection" (invalid-name)
+C:305,12: Invalid variable name "queryCollection" (invalid-name)
+C:309, 4: Invalid method name "clearResult" (invalid-name)
+C:309, 4: Missing method docstring (missing-docstring)
+C:312, 4: Invalid method name "showResult" (invalid-name)
+C:312, 4: Invalid argument name "isShow" (invalid-name)
+C:312, 4: Invalid argument name "queryCollection" (invalid-name)
+C:312, 4: Missing method docstring (missing-docstring)
+C:318,12: Invalid variable name "p" (invalid-name)
+E:319,18: Module 'PyQt4.QtGui' has no 'QTableWidgetItem' member (no-member)
+E:320,18: Module 'PyQt4.QtGui' has no 'QTableWidgetItem' member (no-member)
+E:321,18: Module 'PyQt4.QtGui' has no 'QTableWidgetItem' member (no-member)
+E:322,18: Module 'PyQt4.QtGui' has no 'QTableWidgetItem' member (no-member)
+C:334, 8: Invalid attribute name "contentsWidget" (invalid-name)
+C:341, 8: Invalid attribute name "pagesWidget" (invalid-name)
+C:330, 0: Missing class docstring (missing-docstring)
+E:330,19: Module 'PyQt4.QtGui' has no 'QDialog' member (no-member)
+E:331, 4: Use of super on an old style class (super-on-old-class)
+E:333, 8: Instance of 'ConfigDialog' has no 'setFixedSize' member (no-member)
+E:334,30: Module 'PyQt4.QtGui' has no 'QListWidget' member (no-member)
+E:335,40: Module 'PyQt4.QtGui' has no 'QListView' member (no-member)
+E:336,40: Module 'PyQt4.QtCore' has no 'QSize' member (no-member)
+E:337,40: Module 'PyQt4.QtGui' has no 'QListView' member (no-member)
+E:341,27: Module 'PyQt4.QtGui' has no 'QStackedWidget' member (no-member)
+C:346, 8: Invalid variable name "closeButton" (invalid-name)
+E:346,22: Module 'PyQt4.QtGui' has no 'QPushButton' member (no-member)
+E:351,36: Instance of 'ConfigDialog' has no 'close' member (no-member)
+C:353, 8: Invalid variable name "horizontalLayout" (invalid-name)
+E:353,27: Module 'PyQt4.QtGui' has no 'QHBoxLayout' member (no-member)
+C:357, 8: Invalid variable name "buttonsLayout" (invalid-name)
+E:357,24: Module 'PyQt4.QtGui' has no 'QHBoxLayout' member (no-member)
+C:361, 8: Invalid variable name "mainLayout" (invalid-name)
+E:361,21: Module 'PyQt4.QtGui' has no 'QVBoxLayout' member (no-member)
+E:367, 8: Instance of 'ConfigDialog' has no 'setLayout' member (no-member)
+E:369, 8: Instance of 'ConfigDialog' has no 'setWindowTitle' member (no-member)
+C:372, 4: Invalid method name "changePage" (invalid-name)
+C:372, 4: Missing method docstring (missing-docstring)
+C:378, 4: Invalid method name "createIcons" (invalid-name)
+C:378, 4: Missing method docstring (missing-docstring)
+C:379, 8: Invalid variable name "configButton" (invalid-name)
+E:379,23: Module 'PyQt4.QtGui' has no 'QListWidgetItem' member (no-member)
+E:380,29: Module 'PyQt4.QtGui' has no 'QIcon' member (no-member)
+E:382,38: Module 'PyQt4.QtCore' has no 'Qt' member (no-member)
+E:383,30: Module 'PyQt4.QtCore' has no 'Qt' member (no-member)
+E:383,59: Module 'PyQt4.QtCore' has no 'Qt' member (no-member)
+C:385, 8: Invalid variable name "updateButton" (invalid-name)
+E:385,23: Module 'PyQt4.QtGui' has no 'QListWidgetItem' member (no-member)
+E:386,29: Module 'PyQt4.QtGui' has no 'QIcon' member (no-member)
+E:388,38: Module 'PyQt4.QtCore' has no 'Qt' member (no-member)
+E:389,30: Module 'PyQt4.QtCore' has no 'Qt' member (no-member)
+E:389,59: Module 'PyQt4.QtCore' has no 'Qt' member (no-member)
+C:391, 8: Invalid variable name "queryButton" (invalid-name)
+E:391,22: Module 'PyQt4.QtGui' has no 'QListWidgetItem' member (no-member)
+E:392,28: Module 'PyQt4.QtGui' has no 'QIcon' member (no-member)
+E:394,37: Module 'PyQt4.QtCore' has no 'Qt' member (no-member)
+E:395,29: Module 'PyQt4.QtCore' has no 'Qt' member (no-member)
+E:395,58: Module 'PyQt4.QtCore' has no 'Qt' member (no-member)
+C:404, 4: Invalid constant name "app" (invalid-name)
+E:404,10: Module 'PyQt4.QtGui' has no 'QApplication' member (no-member)
+C:405, 4: Invalid constant name "dialog" (invalid-name)
+E:406,13: Instance of 'ConfigDialog' has no 'exec_' member (no-member)
+W: 12, 0: Unused import datetime (unused-import)
+W: 14, 0: Unused import Scraper_rc (unused-import)

@@ -1,0 +1,3 @@
+************* Module shzfcg.settings
+C: 87, 0: Line too long (109/100) (line-too-long)
+C:  1, 0: Missing module docstring (missing-docstring)

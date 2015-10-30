@@ -1,0 +1,6 @@
+************* Module shzfcg.pipelines
+C:  1, 0: Missing module docstring (missing-docstring)
+C: 14, 0: Missing class docstring (missing-docstring)
+C: 20, 8: Invalid variable name "db" (invalid-name)
+C: 23, 4: Missing method docstring (missing-docstring)
+R: 14, 0: Too few public methods (1/2) (too-few-public-methods)
